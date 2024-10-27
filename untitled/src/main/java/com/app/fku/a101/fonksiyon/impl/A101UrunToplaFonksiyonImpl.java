@@ -1,0 +1,165 @@
+package com.app.fku.a101.fonksiyon.impl;
+
+import com.app.fku.a101.entity.A101Kategori;
+import com.app.fku.a101.entity.A101TelegramConf;
+import com.app.fku.a101.fonksiyon.service.A101GenelService;
+import com.app.fku.a101.fonksiyon.service.A101UrunToplaFonksiyon;
+import com.app.fku.a101.repository.A101TelegramConfRepository;
+import com.app.fku.genel.fonksiyon.service.GenelService;
+import com.app.fku.genel.fonksiyon.service.LogService;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
+import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+@Service
+public class A101UrunToplaFonksiyonImpl implements A101UrunToplaFonksiyon {
+
+    @Autowired
+    A101GenelService a101GenelService;
+
+    @Autowired
+    GenelService genelService;
+
+    @Autowired
+    LogService logService;
+
+    @Autowired
+    A101TelegramConfRepository a101TelegramConfRepository;
+
+    @Override
+    public HashMap<String, Long> menudenUrunBul(A101Kategori a101Kategori, Integer page, Integer maxPage, HashMap<String, Long> urunHashMap, HashMap<String, Long> yeniUrunHashMap, boolean ilkMi) throws IOException, InterruptedException {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+        NumberFormat nf = new DecimalFormat("#0.00");
+        try {
+            Document a101Doc = a101GenelService.urleGit(a101Kategori.getSayfaAdresi() + "&page=" + page);
+
+            if (a101Doc == null) {
+                throw new Exception("a101Doc null (Captcha)");
+            } else {
+            }
+
+            if (maxPage == null) {
+                Elements paginationElementList = a101Doc.getElementsByClass("pagination");
+                if (paginationElementList != null && paginationElementList.size() > 0) {
+                    List<Node> paginationNodeList = paginationElementList.get(0).childNodes().get(1).childNodes();
+                    Node maxPageNode = paginationNodeList.get(paginationNodeList.size() - 4);
+                    String maxPageStr = maxPageNode.childNodes().get(1).attributes().get("title");
+                    maxPage = new Integer(maxPageStr.trim());
+                }
+            }
+
+            Elements urunElementList = a101Doc.getElementsByClass("set-product-item");
+            for (Element urunElement: urunElementList) {
+                Elements tukendiElementList = urunElement.getElementsByClass("sold-out-button");
+                Elements kapidaElementList = urunElement.getElementsByClass("add-basket add-basket-kapida");
+                String id = urunElement.childNodes().get(1).attributes().get("data-pk");
+                if (
+                        (tukendiElementList == null || tukendiElementList.size() == 0)
+                        &&
+                        (kapidaElementList == null || kapidaElementList.size() == 0)
+                ) {
+                    String urunLink = urunElement.childNodes().get(1).childNodes().get(1).attributes().get("href");
+                    String urunAdi = urunElement.childNodes().get(1).childNodes().get(1).attributes().get("title");
+                    String fiyatStr = ((Element) urunElement.childNodes().get(1).childNodes().get(1).childNodes().get(1).childNodes().get(3)).getElementsByClass("current").get(0).childNodes().get(0).toString();
+
+                    Long yeniFiyat = new Long(fiyatStr.replace("₺", "").split(",")[0].replace(".",""));
+                    Long eskiFiyat = urunHashMap.get(id);
+
+                    if (yeniFiyat < 400) {
+                        continue;
+                    }
+
+                    if (eskiFiyat == null) {
+                        //yeni gelmiş ürün
+                        yeniUrunHashMap.put(id, yeniFiyat);
+                        if (!ilkMi) {
+                            //mesaj at
+                            String akakceLink = urunAdi.replace(" ", "%2B");
+                            akakceLink = akakceLink.replace("+", "");
+
+                            String mesaj = "" +
+                                    //a101Kategori.getKategoriAdi() + "%0A" +
+                                    "YENİ ÜRÜN%0A" +
+                                    "Ürün Adı: " + urunAdi + "%0A" +
+                                    "Yeni Fiyat: " + nf.format(yeniFiyat) + "%0A" +
+                                    "Ürün Link:" + "https://www.a101.com.tr/" + urunLink + "%0A" +
+                                    "Tarih: " + sdf.format(new Date()) + "%0A" +
+                                    "Akakçe Link:https://www.akakce.com/arama/?q=" + akakceLink + " %0A " +
+                                    "***Generated By Emin KAYABASI***";
+
+                            telegramMesajGonder(mesaj, a101Kategori, urunAdi);
+                        }
+                    } else {
+                        //zaten var olan ürün
+                        if (yeniFiyat < eskiFiyat) {
+                            //mesaj at
+                            String akakceLink = urunAdi.replace(" ", "%2B");
+                            akakceLink = akakceLink.replace("+", "");
+
+                            Long indirim = eskiFiyat - yeniFiyat;
+                            String mesaj = "" +
+                                    //a101Kategori.getKategoriAdi() + "%0A" +
+                                    "Ürün Adı: " + urunAdi + "%0A" +
+                                    "Eski Fiyat: " + nf.format(eskiFiyat) + "%0A" +
+                                    "Yeni Fiyat: " + nf.format(yeniFiyat) + "%0A" +
+                                    "İndirim: " + nf.format(indirim) + "%0A" +
+                                    "Ürün Link:" + "https://www.a101.com.tr/" + urunLink + "%0A" +
+                                    "Tarih: " + sdf.format(new Date()) + "%0A" +
+                                    "Akakçe Link:https://www.akakce.com/arama/?q=" + akakceLink + " %0A " +
+                                    "***Generated By Emin KAYABASI***";
+
+                            telegramMesajGonder(mesaj, a101Kategori, urunAdi);
+                        }
+                        //urunHashMap.remove(id);
+                        yeniUrunHashMap.put(id, yeniFiyat);
+                    }
+                } else {
+                    //urunHashMap.remove(id);
+                }
+            }
+
+            if (maxPage != null) {
+                if (page < maxPage) {
+                    yeniUrunHashMap = menudenUrunBul(a101Kategori, page + 1, maxPage, urunHashMap, yeniUrunHashMap, ilkMi);
+                }
+            }
+            return yeniUrunHashMap;
+        } catch (Exception e) {
+            logService.a101LogYaz("A101 Hata Kategori:" + a101Kategori.getKategoriAdi() + " - Sayfa:");
+            Thread.sleep(10000L);
+            return urunHashMap;
+        }
+    }
+
+    private void telegramMesajGonder(String mesaj, A101Kategori a101Kategori, String urunId) throws IOException, InterruptedException {
+        List<A101TelegramConf> a101TelegramConfList = a101TelegramConfRepository.findByA101Kategori(a101Kategori);
+
+        for (A101TelegramConf a101TelegramConf: a101TelegramConfList) {
+            genelService.telegramMesajGonder(mesaj, a101TelegramConf.getTelegramChatId(), urunId, "5611661625:AAHvQK5Se3A1r3I640BGyIBNBx3J4TF2G4o");
+        }
+
+        if (urunId.toUpperCase().contains("WD")) {
+            genelService.a101TelegramHDDGonder(mesaj, urunId);
+        }
+
+        if (urunId.toUpperCase().contains("PLAYSTATION") ||
+                urunId.toUpperCase().contains("PLAYSTATİON") ||
+                urunId.toUpperCase().contains("PLAY STATION") ||
+                urunId.toUpperCase().contains("PLAY STATİON")) {
+            genelService.telegramPlayStationGonder(mesaj, urunId);
+        }
+    }
+}

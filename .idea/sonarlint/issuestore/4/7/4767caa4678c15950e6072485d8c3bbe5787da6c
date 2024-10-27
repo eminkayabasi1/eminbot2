@@ -1,0 +1,23 @@
+
+t
+java:S2142;"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(¿àşÿÿÿÿ
+m
+java:S3776A"RRefactor this method to reduce its Cognitive Complexity from 41 to the 15 allowed.(¡Ø¨Ñùÿÿÿÿ
+T	java:S106Á"9Replace this use of System.out or System.err by a logger.(»Œ¾ìûÿÿÿÿ
+4
+java:S1128"Remove this duplicated import.(´‘¨™
+9
+java:S1128"Remove this duplicated import.(Ù±šªûÿÿÿÿ
+F
+java:S1128"0Remove this unused import 'java.io.InputStream'.(¹»º
+D
+java:S1128")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ
+I
+java:S1128"3Remove this unused import 'java.net.URLConnection'.(š¿šó
+{
+java:S1192/"eDefine a constant instead of duplicating this literal "cc7c5241-6017-44b2-9528-93c8d8907efb" 3 times.(¡ç†ë
+{
+java:S1192/"eDefine a constant instead of duplicating this literal "47b14cfb-2cad-471a-85de-ebe4684ee95f" 3 times.(¡ç†ë
+8
+java:S21898""Add an end condition to this loop.(´ÿÕ™

@@ -1,0 +1,25 @@
+
+t
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾
+M	java:S106 "9Replace this use of System.out or System.err by a logger.(šÿí|
+m
+java:S3776%"RRefactor this method to reduce its Cognitive Complexity from 59 to the 15 allowed.(´”Ç´şÿÿÿÿ
+S	java:S106)"9Replace this use of System.out or System.err by a logger.(Ê£à«ùÿÿÿÿ
+N	java:S106-"9Replace this use of System.out or System.err by a logger.(åäŞ
+Q	java:S1251"<This block of commented-out lines of code should be removed.(Íµå
+Q	java:S125\"<This block of commented-out lines of code should be removed.(éÙÚ€
+O	java:S106‡"9Replace this use of System.out or System.err by a logger.(“¡Ö”
+W	java:S125Œ"<This block of commented-out lines of code should be removed.(ëß¨Šşÿÿÿÿ
+T	java:S106Ë"9Replace this use of System.out or System.err by a logger.(ãÍ’‘ûÿÿÿÿ
+d
+java:S5361Ï"HReplace this call to "replaceAll()" by a call to the "replace()" method.(˜¦¯¸úÿÿÿÿ
+M
+java:S1854ï"6Remove this useless assignment to local variable "is".(çÌÔ˜
+W	java:S125Ø"<This block of commented-out lines of code should be removed.(¬Êôÿøÿÿÿÿ
+>
+java:S1481ï"'Remove this unused "is" local variable.(çÌÔ˜
+n	java:S135A"YReduce the total number of break and continue statements in this loop to use at most one.(Ñ³†ò
+‡
+java:S1488Ò"kImmediately return this expression instead of assigning it to the temporary variable "amazonResponseModel".(æû®êüÿÿÿÿ
+8
+java:S2189""Add an end condition to this loop.(´ÿÕ™

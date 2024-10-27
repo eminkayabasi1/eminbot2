@@ -1,0 +1,59 @@
+
+v
+java:S3008"[Rename this field "hbus_anonymousId" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢û•¯øÿÿÿÿ
+o
+java:S3008"YRename this field "hbus_sessionId" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àüÁö
+3
+java:S2386"Make this member "protected".(çµó
+3
+java:S2386"Make this member "protected".(Ş†ı†
+8
+java:S2386 "Make this member "protected".(ÜÆ©£ÿÿÿÿÿ
+V	java:S125<"<This block of commented-out lines of code should be removed.(ôìÁŒÿÿÿÿÿ
+T
+java:S2251>"9"i" is incremented and will never reach "stop condition".(‰ˆàßøÿÿÿÿ
+3
+java:S2119A"Save and re-use this "Random".(¼İÅf
+9
+java:S2129D"Remove this "Long" constructor(éš¾Óûÿÿÿÿ
+L
+java:S2696H"6Make the enclosing method "static" or remove this set.(²Òç‹
+4
+java:S2129H"Remove this "Long" constructor(²Òç‹
+V	java:S125T"<This block of commented-out lines of code should be removed.(ìÇØùÿÿÿÿ
+9
+java:S2119z"Save and re-use this "Random".(šŸ«íøÿÿÿÿ
+r
+java:S1192L"WDefine a constant instead of duplicating this literal "https://www.google.com" 4 times.(š’Çºıÿÿÿÿ
+o
+java:S1104"YMake headerHashMap a static final constant or non-public and provide accessors if needed.(çµó
+n
+java:S1104"XMake proxyHashMap a static final constant or non-public and provide accessors if needed.(Ş†ı†
+w
+java:S1104"\Make hbus_anonymousId a static final constant or non-public and provide accessors if needed.(¢û•¯øÿÿÿÿ
+p
+java:S1104"ZMake hbus_sessionId a static final constant or non-public and provide accessors if needed.(àüÁö
+q
+java:S1104 "VMake cookieDate a static final constant or non-public and provide accessors if needed.(ÜÆ©£ÿÿÿÿÿ
+m
+java:S1104!"WMake headerStrGG a static final constant or non-public and provide accessors if needed.(–İÁ
+i
+java:S1104""SMake proxyGG a static final constant or non-public and provide accessors if needed.(³ïò
+I
+java:S1444"3Make this "public static headerHashMap" field final(çµó
+H
+java:S1444"2Make this "public static proxyHashMap" field final(Ş†ı†
+Q
+java:S1444"6Make this "public static hbus_anonymousId" field final(¢û•¯øÿÿÿÿ
+J
+java:S1444"4Make this "public static hbus_sessionId" field final(àüÁö
+K
+java:S1444 "0Make this "public static cookieDate" field final(ÜÆ©£ÿÿÿÿÿ
+G
+java:S1444!"1Make this "public static headerStrGG" field final(–İÁ
+C
+java:S1444""-Make this "public static proxyGG" field final(³ïò
+`
+java:S2259y"JA "NullPointerException" could be thrown; "proxyGGLocal" is nullable here.(¢ÒÇª
+=
+java:S2189>""Correct this loop's end condition.(‰ˆàßøÿÿÿÿ

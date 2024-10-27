@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="fku:war">
+    <output-path>$PROJECT_DIR$/untitled/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>fku</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="fku.war">
+      <element id="artifact" artifact-name="fku:war exploded" />
+    </root>
+  </artifact>
+</component>

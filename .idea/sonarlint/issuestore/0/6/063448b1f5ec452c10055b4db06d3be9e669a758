@@ -1,0 +1,21 @@
+
+t
+java:S2142N"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾
+S	java:S106O"9Replace this use of System.out or System.err by a logger.(‘ó¸şÿÿÿÿ
+m
+java:S3776T"RRefactor this method to reduce its Cognitive Complexity from 57 to the 15 allowed.(¡Ø¨Ñùÿÿÿÿ
+V	java:S125Z"<This block of commented-out lines of code should be removed.(ÏÌ¤Äüÿÿÿÿ
+T	java:S106§"9Replace this use of System.out or System.err by a logger.(†Ö‚éúÿÿÿÿ
+W	java:S125¦"<This block of commented-out lines of code should be removed.(„ú¤àøÿÿÿÿ
+\
+java:S1854½"@Remove this useless assignment to local variable "tyGenelModel".(ìß€Ìûÿÿÿÿ
+d
+java:S1128"IRemove this unused import 'com.app.fku.trendyol.entity.TrendyolKahraman'.(´¹È¶ûÿÿÿÿ
+_
+java:S1128"IRemove this unused import 'com.app.fku.trendyol.entity.TrendyolKategori'.(©Ãè¥
+c
+java:S1128	"MRemove this unused import 'com.app.fku.trendyol.entity.TrendyolTelegramConf'.(Õ‰š”
+P
+java:S1128":Remove this unused import 'java.util.concurrent.TimeUnit'.(Æ™ş
+8
+java:S2189K""Add an end condition to this loop.(´ÿÕ™

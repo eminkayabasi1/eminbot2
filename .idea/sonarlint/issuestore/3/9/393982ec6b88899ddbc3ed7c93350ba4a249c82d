@@ -1,0 +1,7 @@
+
+G
+java:S1874 ",Remove this use of "Date"; it is deprecated.(Ëý¤–ûÿÿÿÿ
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ë°û”ÿÿÿÿÿ
+‚
+java:S1488-"lImmediately return this expression instead of assigning it to the temporary variable "hbGerideKalanlarList".(»Ï¢ï

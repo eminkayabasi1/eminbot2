@@ -1,0 +1,51 @@
+02-Mar-2022 23:06:16.777 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.30
+02-Mar-2022 23:06:16.778 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 7 2019 16:42:04 UTC
+02-Mar-2022 23:06:16.780 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.30.0
+02-Mar-2022 23:06:16.780 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+02-Mar-2022 23:06:16.780 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+02-Mar-2022 23:06:16.780 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+02-Mar-2022 23:06:16.781 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_231\jre
+02-Mar-2022 23:06:16.781 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_231-b11
+02-Mar-2022 23:06:16.781 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+02-Mar-2022 23:06:16.781 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\emin.kayabasi\Desktop\Projeler\SahsiProjeler\FiyatKontrolUygulamasiv2\out\artifacts\fkuback\apache-tomcat-9.0.30
+02-Mar-2022 23:06:16.781 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\emin.kayabasi\Desktop\Projeler\SahsiProjeler\FiyatKontrolUygulamasiv2\out\artifacts\fkuback\apache-tomcat-9.0.30
+02-Mar-2022 23:06:16.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\emin.kayabasi\Desktop\Projeler\SahsiProjeler\FiyatKontrolUygulamasiv2\out\artifacts\fkuback\apache-tomcat-9.0.30\conf\logging.properties
+02-Mar-2022 23:06:16.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+02-Mar-2022 23:06:16.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+02-Mar-2022 23:06:16.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+02-Mar-2022 23:06:16.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+02-Mar-2022 23:06:16.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\emin.kayabasi\Desktop\Projeler\SahsiProjeler\FiyatKontrolUygulamasiv2\out\artifacts\fkuback\apache-tomcat-9.0.30
+02-Mar-2022 23:06:16.783 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\emin.kayabasi\Desktop\Projeler\SahsiProjeler\FiyatKontrolUygulamasiv2\out\artifacts\fkuback\apache-tomcat-9.0.30
+02-Mar-2022 23:06:16.783 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\emin.kayabasi\Desktop\Projeler\SahsiProjeler\FiyatKontrolUygulamasiv2\out\artifacts\fkuback\apache-tomcat-9.0.30\temp
+02-Mar-2022 23:06:16.784 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_231\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\Java\jdk1.8.0_231;C:\Program Files\Java\jdk1.8.0_231\bin;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Users\emin.kayabasi\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_231;;C:\Users\emin.kayabasi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\emin.kayabasi\AppData\Roaming\npm;.]
+02-Mar-2022 23:06:16.999 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+02-Mar-2022 23:06:17.123 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+02-Mar-2022 23:06:17.125 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [497] milliseconds
+02-Mar-2022 23:06:17.148 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+02-Mar-2022 23:06:17.148 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.30]
+02-Mar-2022 23:06:17.162 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\emin.kayabasi\Desktop\Projeler\SahsiProjeler\FiyatKontrolUygulamasiv2\out\artifacts\fkuback\apache-tomcat-9.0.30\webapps\fkuback.war]
+02-Mar-2022 23:06:54.634 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Mar-2022 23:06:54.734 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\emin.kayabasi\Desktop\Projeler\SahsiProjeler\FiyatKontrolUygulamasiv2\out\artifacts\fkuback\apache-tomcat-9.0.30\webapps\fkuback.war] has finished in [37,572] ms
+02-Mar-2022 23:06:54.736 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\emin.kayabasi\Desktop\Projeler\SahsiProjeler\FiyatKontrolUygulamasiv2\out\artifacts\fkuback\apache-tomcat-9.0.30\webapps\fku-front]
+02-Mar-2022 23:06:54.779 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\emin.kayabasi\Desktop\Projeler\SahsiProjeler\FiyatKontrolUygulamasiv2\out\artifacts\fkuback\apache-tomcat-9.0.30\webapps\fku-front] has finished in [42] ms
+02-Mar-2022 23:06:54.785 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+02-Mar-2022 23:06:54.802 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+02-Mar-2022 23:06:54.808 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [37,681] milliseconds
+02-Mar-2022 23:07:42.877 INFO [Thread-14] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+02-Mar-2022 23:07:42.985 INFO [Thread-14] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+02-Mar-2022 23:07:43.066 INFO [Thread-14] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+02-Mar-2022 23:07:43.566 WARNING [Thread-14] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [fkuback] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+02-Mar-2022 23:07:43.567 WARNING [Thread-14] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [fkuback] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.Object.wait(Object.java:502)
+ java.util.TimerThread.mainLoop(Timer.java:526)
+ java.util.TimerThread.run(Timer.java:505)
+02-Mar-2022 23:07:43.568 WARNING [Thread-14] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [fkuback] appears to have started a thread named [Thread-11] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ com.app.fku.trendyol.fonksiyon.impl.TrendyolUrunToplaFonksiyonImpl.menudenUrunBul(TrendyolUrunToplaFonksiyonImpl.java:214)
+ com.app.fku.trendyol.fonksiyon.threadclass.TrendyolSearcherThread.run(TrendyolSearcherThread.java:40)
+ java.lang.Thread.run(Thread.java:748)
+02-Mar-2022 23:07:43.577 INFO [Thread-14] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+02-Mar-2022 23:07:43.580 INFO [Thread-14] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+02-Mar-2022 23:07:43.582 INFO [Thread-14] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+02-Mar-2022 23:07:43.583 INFO [Thread-14] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
