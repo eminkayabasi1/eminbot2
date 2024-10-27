@@ -94,6 +94,12 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                 piCount = piCount + 1;
                 List<TyUrunModel> tyUrunModelList = tyResultModel.getProducts();
                 for (TyUrunModel tyUrunModel : tyUrunModelList) {
+                    if (tyUrunModel.getImageAlt().contains("Yenilenmiş")
+                            || tyUrunModel.getUrl().contains("merchantId=115015")//EasyCep
+                            || tyUrunModel.getUrl().contains("merchantId=106773")//HesapKitap
+                    ) {
+                        continue;
+                    }
                     tyUrunModel.setIndirimOrani(linkModel.getIndirimOrani());
                     if (tyUrunModel.getCollectableCouponDiscount() != null && tyUrunModel.getCollectableCouponDiscount() > 0) {
                         tyUrunModel.getPrice().setSellingPrice(tyUrunModel.getPrice().getSellingPrice() - tyUrunModel.getCollectableCouponDiscount());
@@ -105,6 +111,12 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                     tyResultModel = readJsonFromUrl(linkModel.getUrl() + "&pi=" + i);
                     tyUrunModelList = tyResultModel.getProducts();
                     for (TyUrunModel tyUrunModel : tyUrunModelList) {
+                        if (tyUrunModel.getImageAlt().contains("Yenilenmiş")
+                                || tyUrunModel.getUrl().contains("merchantId=115015")//EasyCep
+                                || tyUrunModel.getUrl().contains("merchantId=106773")//HesapKitap
+                        ) {
+                            continue;
+                        }
                         tyUrunModel.setIndirimOrani(linkModel.getIndirimOrani());
                         if (tyUrunModel.getCollectableCouponDiscount() != null && tyUrunModel.getCollectableCouponDiscount() > 0) {
                             tyUrunModel.getPrice().setSellingPrice(tyUrunModel.getPrice().getSellingPrice() - tyUrunModel.getCollectableCouponDiscount());
