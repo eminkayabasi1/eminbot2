@@ -351,5 +351,9 @@ public class HepsiBuradaUrunEkleJSONServiceImpl implements HepsiBuradaSepetUrunE
         //DYSON
         hbRequestMetadataModelList.add(new HbRequestMetadataModel("HBV00000LZ4D1", "805c71af-73be-4033-b59a-c73109c17165"));//Karaca Vantuz Off-Road RS007 2 in 1
         //DYSON
+
+        //KİWİ
+        hbRequestMetadataModelList.add(new HbRequestMetadataModel("HBCV00006IUDJO", "c512dea9-2477-48a1-9f32-06285c7550b1"));//Kiwi KCC-4325
+        //KİWİ
     }
 }
