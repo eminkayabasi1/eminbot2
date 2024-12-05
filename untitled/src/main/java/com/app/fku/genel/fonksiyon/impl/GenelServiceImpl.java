@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.UnknownHostException;
+import java.io.UnsupportedEncodingException;
+import java.net.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 @Service
@@ -91,6 +91,7 @@ public class GenelServiceImpl implements GenelService {
     @Override
     public void telegramMesajGonder(String mesaj, String chatId, String urunId, String token) throws IOException, InterruptedException {
         //System.out.println(urunId + " " + chatId + " mesaj gönderdim. " + urunId);
+        /**
         mesaj = mesaj.replace(" h", "xh");
         mesaj = mesaj.replace(" H", "xh");
         mesaj = mesaj.replace("ş", "s");
@@ -105,7 +106,7 @@ public class GenelServiceImpl implements GenelService {
         mesaj = mesaj.replace("ç", "c");
         mesaj = mesaj.replace("Ü", "u");
         mesaj = mesaj.replace("ü", "u");
-        mesaj = mesaj.replace("&", "");
+        mesaj = mesaj.replace("&", "");*/
 
         String urlString = "https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text=%s";
 
@@ -117,13 +118,28 @@ public class GenelServiceImpl implements GenelService {
         String text = mesaj;
         urlString = String.format(urlString, token, chatId, text);
         try {
-            URL url = new URL(urlString);
+            URL url = new URL(getValidURL(urlString));
             URLConnection conn = url.openConnection();
             InputStream is = conn.getInputStream();
         } catch (IOException e) {
             e.printStackTrace();
             Thread.sleep(10000L);
             telegramMesajGonder("Mesaj Hatasi--" + urunId, chatId, urunId, token);
+        }
+    }
+
+    static String getValidURL(String invalidURLString){
+        try {
+            // Convert the String and decode the URL into the URL class
+            URL url = new URL(URLDecoder.decode(invalidURLString, StandardCharsets.UTF_8.toString()));
+
+            // Use the methods of the URL class to achieve a generic solution
+            URI uri = new URI(url.getProtocol(), url.getUserInfo(), url.getHost(), url.getPort(), url.getPath(), url.getQuery(), url.getRef());
+            // return String or
+            // uri.toURL() to return URL object
+            return uri.toString();
+        } catch (URISyntaxException | UnsupportedEncodingException | MalformedURLException ignored) {
+            return null;
         }
     }
 
