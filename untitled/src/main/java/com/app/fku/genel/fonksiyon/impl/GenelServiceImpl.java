@@ -116,9 +116,10 @@ public class GenelServiceImpl implements GenelService {
 
 //        String apiToken = "1610924512:AAFdxtkwC0zSCyZnmWrmN4Gixj4JIgNO-6U";
         String text = mesaj;
-        urlString = String.format(urlString, token, chatId, text);
+        //urlString = String.format(urlString, token, chatId, text);
+        urlString = String.format(urlString, token, chatId, URLEncoder.encode(text, StandardCharsets.UTF_8.toString()));
         try {
-            URL url = new URL(getValidURL(urlString));
+            URL url = new URL(urlString);
             URLConnection conn = url.openConnection();
             InputStream is = conn.getInputStream();
         } catch (IOException e) {
