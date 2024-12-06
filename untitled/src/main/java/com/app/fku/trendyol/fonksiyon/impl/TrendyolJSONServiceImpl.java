@@ -4,9 +4,6 @@ import com.app.fku.genel.fonksiyon.service.GenelService;
 import com.app.fku.genel.fonksiyon.service.LogService;
 import com.app.fku.genel.model.LinkModel;
 import com.app.fku.genel.utils.RandomString;
-import com.app.fku.trendyol.entity.TrendyolKahraman;
-import com.app.fku.trendyol.entity.TrendyolKategori;
-import com.app.fku.trendyol.entity.TrendyolTelegramConf;
 import com.app.fku.trendyol.fonksiyon.service.TrendyolGenelService;
 import com.app.fku.trendyol.fonksiyon.service.TrendyolJSONService;
 import com.app.fku.trendyol.model.TyGenelModel;
@@ -27,7 +24,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.TimeUnit;
 
 @Service
 public class TrendyolJSONServiceImpl implements TrendyolJSONService {
@@ -70,6 +66,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
         urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=103109&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=325%2C651%2C326%2C105973%2C653%2C103138&wc=1354&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=103138%2C325%2C326&wc=104593&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=104725%2C104764%2C467&wc=90&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
 
 
         for (; ; ) {
@@ -102,7 +99,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                     }
                     tyUrunModel.setIndirimOrani(linkModel.getIndirimOrani());
                     if (tyUrunModel.getCollectableCouponDiscount() != null && tyUrunModel.getCollectableCouponDiscount() > 0) {
-                        tyUrunModel.getPrice().setSellingPrice(tyUrunModel.getPrice().getSellingPrice() - tyUrunModel.getCollectableCouponDiscount());
+                        tyUrunModel.getPrice().setOriginalPrice(tyUrunModel.getPrice().getOriginalPrice() - tyUrunModel.getCollectableCouponDiscount());
                     }
                     topluUrunList.add(tyUrunModel);
                 }
@@ -119,7 +116,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                         }
                         tyUrunModel.setIndirimOrani(linkModel.getIndirimOrani());
                         if (tyUrunModel.getCollectableCouponDiscount() != null && tyUrunModel.getCollectableCouponDiscount() > 0) {
-                            tyUrunModel.getPrice().setSellingPrice(tyUrunModel.getPrice().getSellingPrice() - tyUrunModel.getCollectableCouponDiscount());
+                            tyUrunModel.getPrice().setOriginalPrice(tyUrunModel.getPrice().getOriginalPrice() - tyUrunModel.getCollectableCouponDiscount());
                         }
                         topluUrunList.add(tyUrunModel);
                     }
@@ -130,13 +127,13 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                 TyUrunModel eskiTyUrunModel = urunHashMap.get(tyUrunModel.getId());
                 if (eskiTyUrunModel != null) {
                     //Önceden var olan ürün, fiyat kontrol et
-                    if (tyUrunModel.getPrice().getSellingPrice() < eskiTyUrunModel.getPrice().getSellingPrice() * eskiTyUrunModel.getIndirimOrani() && !ilkTur) {
+                    if (tyUrunModel.getPrice().getOriginalPrice() < eskiTyUrunModel.getPrice().getOriginalPrice() * eskiTyUrunModel.getIndirimOrani() && !ilkTur) {
                         String mesaj = "" +
                                 "İndirim%0A" +
                                 "" + tyUrunModel.getCategoryName() + "%0A" +
                                 "" + tyUrunModel.getImageAlt() + "%0A" +
-                                "Eski Fiyat: " + eskiTyUrunModel.getPrice().getSellingPrice() + "%0A" +
-                                "Yeni Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "%0A" +
+                                "Eski Fiyat: " + eskiTyUrunModel.getPrice().getOriginalPrice() + "%0A" +
+                                "Yeni Fiyat: " + tyUrunModel.getPrice().getOriginalPrice() + "%0A" +
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "%0A" +
                                 "Link:https://www.trendyol.com/" + tyUrunModel.getUrl();
 
@@ -144,9 +141,15 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                             telegramMesajGonder(mesaj, "-4149448403", tyUrunModel.getId());
                         } else if (tyUrunModel.getImageAlt().contains("Stanley") || tyUrunModel.getImageAlt().contains("STANLEY") || tyUrunModel.getImageAlt().contains("stanley")) {
                             telegramMesajGonder(mesaj, "-4506545515", tyUrunModel.getId());
+                        } else if (tyUrunModel.getImageAlt().contains("Lego") || tyUrunModel.getImageAlt().contains("LEGO") || tyUrunModel.getImageAlt().contains("lego")) {
+                            telegramMesajGonder(mesaj, "-4654789852", tyUrunModel.getId());
                         } else {
                             telegramMesajGonder(mesaj, "-4162270115", tyUrunModel.getId());
                             telegramMesajGonder(mesaj, "-4504951480", tyUrunModel.getId());
+                        }
+
+                        if (tyUrunModel.getPrice().getOriginalPrice() < eskiTyUrunModel.getPrice().getOriginalPrice() * 0.70d) {
+                            telegramMesajGonder(mesaj, "-4654089282", tyUrunModel.getId());
                         }
                     }
                 } else {
@@ -156,7 +159,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                                 "Yeni Ürün%0A" +
                                 "" + tyUrunModel.getCategoryName() + "%0A" +
                                 "" + tyUrunModel.getImageAlt() + "%0A" +
-                                "Fiyat Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "%0A" +
+                                "Fiyat Fiyat: " + tyUrunModel.getPrice().getOriginalPrice() + "%0A" +
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "%0A" +
                                 "Link:https://www.trendyol.com/" + tyUrunModel.getUrl();
 
