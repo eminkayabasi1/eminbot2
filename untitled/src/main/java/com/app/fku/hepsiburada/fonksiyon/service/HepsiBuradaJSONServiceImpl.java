@@ -89,10 +89,10 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                     //Önceden var olan ürün, fiyat kontrol et
                     if (hbSepetUrunModel.getPrice().getAmount() < eskiHbUrunModel.getPrice().getAmount() && !ilkTur) {
                         String mesaj = "" +
-                                "İndirim%0A" +
-                                "" + hbSepetUrunModel.getProduct().getName() + "%0A" +
-                                "Eski Fiyat: " + eskiHbUrunModel.getPrice().getAmount() + "%0A" +
-                                "Yeni Fiyat: " + hbSepetUrunModel.getPrice().getAmount() + "%0A" +
+                                "İndirim\n" +
+                                "" + hbSepetUrunModel.getProduct().getName() + "\n" +
+                                "Eski Fiyat: " + eskiHbUrunModel.getPrice().getAmount() + "\n" +
+                                "Yeni Fiyat: " + hbSepetUrunModel.getPrice().getAmount() + "\n" +
                                 "Link:" + hbSepetUrunModel.getProduct().getUrl();
 
                         telegramMesajGonder(mesaj, "-4160976358");
@@ -102,9 +102,9 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                     if (!ilkTur) {
                         //Ürün yeni gelmiş direk mesaj at
                         String mesaj = "" +
-                                "Yeni Ürün%0A" +
-                                "" + hbSepetUrunModel.getProduct().getName() + "%0A" +
-                                "Fiyat Fiyat: " + hbSepetUrunModel.getPrice().getAmount() + "%0A" +
+                                "Yeni Ürün\n" +
+                                "" + hbSepetUrunModel.getProduct().getName() + "\n" +
+                                "Fiyat Fiyat: " + hbSepetUrunModel.getPrice().getAmount() + "\n" +
                                 "Link:" + hbSepetUrunModel.getProduct().getUrl();
 
                         telegramMesajGonder(mesaj, "-4160976358");

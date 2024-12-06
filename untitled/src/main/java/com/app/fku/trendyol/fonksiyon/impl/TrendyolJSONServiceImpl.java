@@ -156,11 +156,11 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                     if (!ilkTur) {
                         //Ürün yeni gelmiş direk mesaj at
                         String mesaj = "" +
-                                "Yeni Ürün%0A" +
-                                "" + tyUrunModel.getCategoryName() + "%0A" +
-                                "" + tyUrunModel.getImageAlt() + "%0A" +
-                                "Fiyat Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "%0A" +
-                                "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "%0A" +
+                                "Yeni Ürün\n" +
+                                "" + tyUrunModel.getCategoryName() + "\n" +
+                                "" + tyUrunModel.getImageAlt() + "\n" +
+                                "Fiyat Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
+                                "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
                                 "Link:https://www.trendyol.com/" + tyUrunModel.getUrl();
 
                         if (tyUrunModel.getImageAlt().contains("Dyson") || tyUrunModel.getImageAlt().contains("DYSON") || tyUrunModel.getImageAlt().contains("dyson")) {

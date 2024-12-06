@@ -104,30 +104,30 @@ public class KaracaJSONServiceImpl implements KaracaJSONService {
                     if (karacaUrunModel.getFiyat() < eskiKaracaUrunModel.getFiyat() * eskiKaracaUrunModel.getIndirimOrani() && !ilkTur) {
                         //İndirim
                         String mesaj = "" +
-                                "İndirim%0A" +
-                                "" + karacaUrunModel.getName() + "%0A" +
-                                "Eski Fiyat: " + eskiKaracaUrunModel.getUnFormattedPrice() + "%0A" +
-                                "Yeni Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "%0A" +
-                                "Birlikte Al Kazan:" + (eskiKaracaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + ":::" + (karacaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + "%0A" +
+                                "İndirim\n" +
+                                "" + karacaUrunModel.getName() + "\n" +
+                                "Eski Fiyat: " + eskiKaracaUrunModel.getUnFormattedPrice() + "\n" +
+                                "Yeni Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "\n" +
+                                "Birlikte Al Kazan:" + (eskiKaracaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + ":::" + (karacaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + "\n" +
                                 "Link:" + karacaUrunModel.getHref();
                         telegramMesajGonder(mesaj, "-" + karacaUrunModel.getTelegramChatId());
                     } else if (karacaUrunModel.getFiyat() > eskiKaracaUrunModel.getFiyat() && !ilkTur) {
                         //Zam
                         String mesaj = "" +
-                                "Zam%0A" +
-                                "" + karacaUrunModel.getName() + "%0A" +
-                                "Eski Fiyat: " + eskiKaracaUrunModel.getUnFormattedPrice() + "%0A" +
-                                "Yeni Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "%0A" +
-                                "Birlikte Al Kazan:" + (eskiKaracaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + ":::" + (karacaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + "%0A" +
+                                "Zam\n" +
+                                "" + karacaUrunModel.getName() + "\n" +
+                                "Eski Fiyat: " + eskiKaracaUrunModel.getUnFormattedPrice() + "\n" +
+                                "Yeni Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "\n" +
+                                "Birlikte Al Kazan:" + (eskiKaracaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + ":::" + (karacaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + "\n" +
                                 "Link:" + karacaUrunModel.getHref();
                         telegramMesajGonder(mesaj, "-4157690423");//ZAM
                     } else if (!eskiKaracaUrunModel.getBirlikteAlKazanMi().equals(karacaUrunModel.getBirlikteAlKazanMi()) && !ilkTur) {
                         //Birlikte Al
                         String mesaj = "" +
-                                "İndirim%0A" +
-                                "" + karacaUrunModel.getName() + "%0A" +
-                                "Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "%0A" +
-                                "Birlikte Al Kazan:" + (eskiKaracaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + ":::" + (karacaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + "%0A" +
+                                "İndirim\n" +
+                                "" + karacaUrunModel.getName() + "\n" +
+                                "Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "\n" +
+                                "Birlikte Al Kazan:" + (eskiKaracaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + ":::" + (karacaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + "\n" +
                                 "Link:" + karacaUrunModel.getHref();
                         telegramMesajGonder(mesaj, "-" + karacaUrunModel.getTelegramChatId());
                     }
@@ -135,10 +135,10 @@ public class KaracaJSONServiceImpl implements KaracaJSONService {
                     if (!ilkTur) {
                         //Ürün yeni gelmiş direk mesaj at
                         String mesaj = "" +
-                                "Yeni Ürün%0A" +
-                                "" + karacaUrunModel.getName() + "%0A" +
-                                "Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "%0A" +
-                                "Birlikte Al Kazan:" + (karacaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + "%0A" +
+                                "Yeni Ürün\n" +
+                                "" + karacaUrunModel.getName() + "\n" +
+                                "Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "\n" +
+                                "Birlikte Al Kazan:" + (karacaUrunModel.getBirlikteAlKazanMi() ? "Evet" : "Hayır") + "\n" +
                                 "Link:" + karacaUrunModel.getHref();
                         telegramMesajGonder(mesaj, "-" + karacaUrunModel.getTelegramChatId());
                     }

@@ -153,12 +153,12 @@ public class HepsiBuradaSepetJSONServiceImpl implements HepsiBuradaJSONService {
                     //Önceden var olan ürün, fiyat kontrol et
                     if (hbUrunModel.getFinalPriceOnSale() < eskiHbUrunModel.getFinalPriceOnSale() * eskiHbUrunModel.getIndirimOrani() && !ilkTur) {
                         String mesaj = "" +
-                                "İndirim%0A" +
-                                "" + hbUrunModel.getCatalogName() + " - " + hbUrunModel.getBrand() + "%0A" +
-                                "" + hbUrunModel.getName() + "%0A" +
-                                "Eski Fiyat: " + eskiHbUrunModel.getFinalPriceOnSale() + "%0A" +
-                                "Yeni Fiyat: " + hbUrunModel.getFinalPriceOnSale() + "%0A" +
-                                "Satıcı: " + eskiHbUrunModel.getMerchantName() + " - " + hbUrunModel.getMerchantName() + "%0A" +
+                                "İndirim\n" +
+                                "" + hbUrunModel.getCatalogName() + " - " + hbUrunModel.getBrand() + "\n" +
+                                "" + hbUrunModel.getName() + "\n" +
+                                "Eski Fiyat: " + eskiHbUrunModel.getFinalPriceOnSale() + "\n" +
+                                "Yeni Fiyat: " + hbUrunModel.getFinalPriceOnSale() + "\n" +
+                                "Satıcı: " + eskiHbUrunModel.getMerchantName() + " - " + hbUrunModel.getMerchantName() + "\n" +
                                 "Link:" + hbUrunModel.getUrl();
                         if (hbUrunModel.getTelegramChatId() != null) {
                             telegramMesajGonder(mesaj, "-" + hbUrunModel.getTelegramChatId());
@@ -176,10 +176,10 @@ public class HepsiBuradaSepetJSONServiceImpl implements HepsiBuradaJSONService {
                         //Ürün yeni gelmiş direk mesaj at
                         String mesaj = "" +
                                 "Yeni Ürün%0A" +
-                                "" + hbUrunModel.getCatalogName() + " - " + hbUrunModel.getBrand() + "%0A" +
-                                "" + hbUrunModel.getName() + "%0A" +
-                                "Fiyat Fiyat: " + hbUrunModel.getFinalPriceOnSale() + "%0A" +
-                                "Satıcı: " + hbUrunModel.getMerchantName() + "%0A" +
+                                "" + hbUrunModel.getCatalogName() + " - " + hbUrunModel.getBrand() + "\n" +
+                                "" + hbUrunModel.getName() + "\n" +
+                                "Fiyat Fiyat: " + hbUrunModel.getFinalPriceOnSale() + "\n" +
+                                "Satıcı: " + hbUrunModel.getMerchantName() + "\n" +
                                 "Link:" + hbUrunModel.getUrl();
                         if (hbUrunModel.getTelegramChatId() != null) {
                             telegramMesajGonder(mesaj, "-" + hbUrunModel.getTelegramChatId());
