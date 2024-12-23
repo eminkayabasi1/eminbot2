@@ -355,5 +355,11 @@ public class HepsiBuradaUrunEkleJSONServiceImpl implements HepsiBuradaSepetUrunE
         //KİWİ
         hbRequestMetadataModelList.add(new HbRequestMetadataModel("HBCV00006IUDJO", "c512dea9-2477-48a1-9f32-06285c7550b1"));//Kiwi KCC-4325
         //KİWİ
+
+        //SAMSUNG
+        hbRequestMetadataModelList.add(new HbRequestMetadataModel("HBCV00002TPVM2", "b213b86b-671b-42d6-b8d5-536036974273"));//Samsung WW11BGA046AEAH 11 Kg 1400 devir Çamaşır Makinesi
+        hbRequestMetadataModelList.add(new HbRequestMetadataModel("HBCV0000063MGX", "75916172-3d8d-431f-8d0c-67ae0eba3520"));//Samsung WW90T4020CE/AH 9 Kg 1200 devir Çamaşır Makinesi
+        hbRequestMetadataModelList.add(new HbRequestMetadataModel("HBV00000U3AAI", "849ddcb4-4cbd-4cbd-b9b5-bea3d1fdaaec"));//Samsung AR12TXHQBWK/SK 12000 BTU Duvar Tipi Klima
+        //SAMSUNG
     }
 }
