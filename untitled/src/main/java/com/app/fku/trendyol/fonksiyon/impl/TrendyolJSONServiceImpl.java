@@ -67,6 +67,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
         urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=325%2C651%2C326%2C105973%2C653%2C103138&wc=1354&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=103138%2C325%2C326&wc=104593&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=104725%2C104764%2C467&wc=90&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=109092&wc=108931&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
 
 
         for (; ; ) {
@@ -94,6 +95,9 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                     if (tyUrunModel.getImageAlt().contains("Yenilenmiş")
                             || tyUrunModel.getUrl().contains("merchantId=115015")//EasyCep
                             || tyUrunModel.getUrl().contains("merchantId=106773")//HesapKitap
+                            || tyUrunModel.getImageAlt().contains(" Fincan ")
+                            || tyUrunModel.getImageAlt().contains(" Kupa ")
+                            || tyUrunModel.getImageAlt().contains(" Porselen ")
                     ) {
                         continue;
                     }
@@ -111,6 +115,9 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                         if (tyUrunModel.getImageAlt().contains("Yenilenmiş")
                                 || tyUrunModel.getUrl().contains("merchantId=115015")//EasyCep
                                 || tyUrunModel.getUrl().contains("merchantId=106773")//HesapKitap
+                                || tyUrunModel.getImageAlt().contains(" Fincan ")
+                                || tyUrunModel.getImageAlt().contains(" Kupa ")
+                                || tyUrunModel.getImageAlt().contains(" Porselen ")
                         ) {
                             continue;
                         }
