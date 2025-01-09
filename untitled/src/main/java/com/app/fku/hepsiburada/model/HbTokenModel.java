@@ -5,6 +5,7 @@ public class HbTokenModel {
     private String tenantId;
     private String bearerTokent;
     private Integer urunSayisi;
+    private Integer urunToplam;
 
     public HbTokenModel(String clientId, String tenantId, String bearerTokent) {
         this.clientId = clientId;
@@ -42,5 +43,13 @@ public class HbTokenModel {
 
     public void setUrunSayisi(Integer urunSayisi) {
         this.urunSayisi = urunSayisi;
+    }
+
+    public Integer getUrunToplam() {
+        return urunToplam;
+    }
+
+    public void setUrunToplam(Integer urunToplam) {
+        this.urunToplam = urunToplam;
     }
 }
