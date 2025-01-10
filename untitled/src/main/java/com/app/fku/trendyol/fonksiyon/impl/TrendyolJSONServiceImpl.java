@@ -150,10 +150,10 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                             telegramMesajGonder(mesaj, "-4506545515", tyUrunModel.getId());
                         } else if (tyUrunModel.getImageAlt().contains("Lego") || tyUrunModel.getImageAlt().contains("LEGO") || tyUrunModel.getImageAlt().contains("lego")) {
                             telegramMesajGonder(mesaj, "-4654789852", tyUrunModel.getId());
-                        } else {
-                            telegramMesajGonder(mesaj, "-4162270115", tyUrunModel.getId());
-                            telegramMesajGonder(mesaj, "-4504951480", tyUrunModel.getId());
                         }
+
+                        telegramMesajGonder(mesaj, "-4162270115", tyUrunModel.getId());
+                        telegramMesajGonder(mesaj, "-4504951480", tyUrunModel.getId());
 
                         if (tyUrunModel.getPrice().getSellingPrice() < eskiTyUrunModel.getPrice().getSellingPrice() * 0.70d) {
                             telegramMesajGonder(mesaj, "-4654089282", tyUrunModel.getId());
@@ -176,10 +176,10 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                             telegramMesajGonder(mesaj, "-4506545515", tyUrunModel.getId());
                         } else if (tyUrunModel.getImageAlt().contains("Lego") || tyUrunModel.getImageAlt().contains("LEGO") || tyUrunModel.getImageAlt().contains("lego")) {
                             telegramMesajGonder(mesaj, "-4654789852", tyUrunModel.getId());
-                        } else {
-                            telegramMesajGonder(mesaj, "-4162270115", tyUrunModel.getId());
-                            telegramMesajGonder(mesaj, "-4504951480", tyUrunModel.getId());
                         }
+
+                        telegramMesajGonder(mesaj, "-4162270115", tyUrunModel.getId());
+                        telegramMesajGonder(mesaj, "-4504951480", tyUrunModel.getId());
                     }
                 }
 
