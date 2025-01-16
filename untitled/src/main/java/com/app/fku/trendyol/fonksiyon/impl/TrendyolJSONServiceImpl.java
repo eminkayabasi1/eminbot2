@@ -59,15 +59,16 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
         urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=103138&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//Stanley Termos
         */
 
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=1104&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=144430&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=104025&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=108656%2C103665&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=103109&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=325%2C651%2C326%2C105973%2C653%2C103138&wc=1354&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=103138%2C325%2C326&wc=104593&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=104725%2C104764%2C467&wc=90&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=109092&wc=164208&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        //urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=1104&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=1104&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=144430&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=104025&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=108656%2C103665&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=103109&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=325%2C651%2C326%2C105973%2C653%2C103138&wc=1354&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=103138%2C325%2C326&wc=104593&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=104725%2C104764%2C467&wc=90&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=109092&wc=164208&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
 
 
         for (; ; ) {
@@ -98,6 +99,15 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                             || tyUrunModel.getImageAlt().contains(" Fincan ")
                             || tyUrunModel.getImageAlt().contains(" Kupa ")
                             || tyUrunModel.getImageAlt().contains(" Porselen ")
+                            || tyUrunModel.getCategoryName().equals("Kapak & Kılıf")
+                            || tyUrunModel.getCategoryName().equals("Kahve Fincanı")
+                            || tyUrunModel.getCategoryName().equals("Kupa")
+                            || tyUrunModel.getCategoryName().equals("Tepsi")
+                            || tyUrunModel.getCategoryName().equals("Ekmek Kutusu ve Sepeti")
+                            || tyUrunModel.getCategoryName().equals("Bardak")
+                            || tyUrunModel.getCategoryName().equals("Peçetelik")
+                            || tyUrunModel.getCategoryName().equals("Tabak")
+                            || tyUrunModel.getCategoryName().equals("Kase")
                     ) {
                         continue;
                     }
@@ -118,6 +128,15 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                                 || tyUrunModel.getImageAlt().contains(" Fincan ")
                                 || tyUrunModel.getImageAlt().contains(" Kupa ")
                                 || tyUrunModel.getImageAlt().contains(" Porselen ")
+                                || tyUrunModel.getCategoryName().equals("Kapak & Kılıf")
+                                || tyUrunModel.getCategoryName().equals("Kahve Fincanı")
+                                || tyUrunModel.getCategoryName().equals("Kupa")
+                                || tyUrunModel.getCategoryName().equals("Tepsi")
+                                || tyUrunModel.getCategoryName().equals("Ekmek Kutusu ve Sepeti")
+                                || tyUrunModel.getCategoryName().equals("Bardak")
+                                || tyUrunModel.getCategoryName().equals("Peçetelik")
+                                || tyUrunModel.getCategoryName().equals("Tabak")
+                                || tyUrunModel.getCategoryName().equals("Kase")
                         ) {
                             continue;
                         }
@@ -200,24 +219,28 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
     public static TyResultModel readJsonFromUrl(String url) throws IOException, JsonException {
         TyResultModel tyResultModel = null;
         for (;;) {
-            RandomString gen = new RandomString(8, ThreadLocalRandom.current());
-            url = url + "&" + gen.nextString() + "=" + gen.nextString();
-            String json = Jsoup
-                    .connect(url)
-                    .userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
-                    .referrer("http://www.google.com")
-                    .timeout(12000)
-                    .followRedirects(true)
-                    .ignoreContentType(true)
-                    .ignoreHttpErrors(true)
-                    .execute()
-                    .body();
-            ObjectMapper mapper = new ObjectMapper();
-            TyGenelModel tyGenelModel = new TyGenelModel();
-            tyGenelModel = mapper.readValue(json, TyGenelModel.class);
-            tyResultModel = tyGenelModel.getResult();
-            if (tyResultModel != null) {
-                return  tyResultModel;
+            try {
+                RandomString gen = new RandomString(8, ThreadLocalRandom.current());
+                //url = url + "&" + gen.nextString() + "=" + gen.nextString();
+                String json = Jsoup
+                        .connect(url)
+                        .userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
+                        .referrer("http://www.google.com")
+                        .timeout(12000)
+                        .followRedirects(true)
+                        .ignoreContentType(true)
+                        .ignoreHttpErrors(true)
+                        .execute()
+                        .body();
+                ObjectMapper mapper = new ObjectMapper();
+                TyGenelModel tyGenelModel = new TyGenelModel();
+                tyGenelModel = mapper.readValue(json, TyGenelModel.class);
+                tyResultModel = tyGenelModel.getResult();
+                if (tyResultModel != null) {
+                    return  tyResultModel;
+                }
+            } catch (Exception e) {
+                System.out.println("sil");
             }
         }
     }

@@ -23,6 +23,7 @@ import com.app.fku.hepsiburada.fonksiyon.service.HbGenelServiceImpl;
 import com.app.fku.hepsiburada.fonksiyon.threadclass.HepsiBuradaJSONThread;
 import com.app.fku.hepsiburada.fonksiyon.threadclass.HepsiBuradaSepetJSONThread;
 import com.app.fku.hepsiburada.fonksiyon.threadclass.HepsiBuradaSepetOtomatikEkleJSONThread;
+import com.app.fku.hepsiburada.fonksiyon.threadclass.HepsiBuradaSepetUrunEkleJSONThread;
 import com.app.fku.karaca.fonksiyon.service.KaracaJSONService;
 import com.app.fku.karaca.fonksiyon.threadclass.KaracaJSONThread;
 import com.app.fku.trendyol.fonksiyon.impl.TrendyolGenelServiceImpl;
@@ -137,13 +138,12 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         threadsHBSepet[0] = new Thread(hepsiBuradaSepetJSONThreads[0]);
         threadsHBSepet[0].start();
 
-        /**
         Thread[] threadsHBSepetUE = new Thread[1];
         HepsiBuradaSepetUrunEkleJSONThread[] hepsiBuradaSepetUEJSONThreads = new HepsiBuradaSepetUrunEkleJSONThread[1];
         hepsiBuradaSepetUEJSONThreads[0] = new HepsiBuradaSepetUrunEkleJSONThread();
         hepsiBuradaSepetUEJSONThreads[0].hepsiBuradaSepetJSONService = hepsiBuradaSepetUrunEkleJSONService;
         threadsHBSepetUE[0] = new Thread(hepsiBuradaSepetUEJSONThreads[0]);
-        threadsHBSepetUE[0].start();*/
+        threadsHBSepetUE[0].start();
 
         Thread[] threadsHBSepetOE = new Thread[1];
         HepsiBuradaSepetOtomatikEkleJSONThread[] hepsiBuradaSepetOtomatikEkleJSONThreads = new HepsiBuradaSepetOtomatikEkleJSONThread[1];
