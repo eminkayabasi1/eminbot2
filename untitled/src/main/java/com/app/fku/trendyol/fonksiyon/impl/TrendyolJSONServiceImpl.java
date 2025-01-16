@@ -219,28 +219,24 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
     public static TyResultModel readJsonFromUrl(String url) throws IOException, JsonException {
         TyResultModel tyResultModel = null;
         for (;;) {
-            try {
-                RandomString gen = new RandomString(8, ThreadLocalRandom.current());
-                //url = url + "&" + gen.nextString() + "=" + gen.nextString();
-                String json = Jsoup
-                        .connect(url)
-                        .userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
-                        .referrer("http://www.google.com")
-                        .timeout(12000)
-                        .followRedirects(true)
-                        .ignoreContentType(true)
-                        .ignoreHttpErrors(true)
-                        .execute()
-                        .body();
-                ObjectMapper mapper = new ObjectMapper();
-                TyGenelModel tyGenelModel = new TyGenelModel();
-                tyGenelModel = mapper.readValue(json, TyGenelModel.class);
-                tyResultModel = tyGenelModel.getResult();
-                if (tyResultModel != null) {
-                    return  tyResultModel;
-                }
-            } catch (Exception e) {
-                System.out.println("sil");
+            RandomString gen = new RandomString(8, ThreadLocalRandom.current());
+            //url = url + "&" + gen.nextString() + "=" + gen.nextString();
+            String json = Jsoup
+                    .connect(url)
+                    .userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
+                    .referrer("http://www.google.com")
+                    .timeout(12000)
+                    .followRedirects(true)
+                    .ignoreContentType(true)
+                    .ignoreHttpErrors(true)
+                    .execute()
+                    .body();
+            ObjectMapper mapper = new ObjectMapper();
+            TyGenelModel tyGenelModel = new TyGenelModel();
+            tyGenelModel = mapper.readValue(json, TyGenelModel.class);
+            tyResultModel = tyGenelModel.getResult();
+            if (tyResultModel != null) {
+                return  tyResultModel;
             }
         }
     }
