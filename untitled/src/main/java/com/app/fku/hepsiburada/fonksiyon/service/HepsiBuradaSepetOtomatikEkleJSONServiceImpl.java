@@ -335,5 +335,6 @@ public class HepsiBuradaSepetOtomatikEkleJSONServiceImpl implements HepsiBuradaS
         linkList.add("https://www.hepsiburada.com/samsung?filtreler=satici:Hepsiburada;MainCategory.Id:60005201,3008012,80160030,159445,80160033&siralama=artanfiyat");//Samsung
         linkList.add("https://www.hepsiburada.com/karaca?filtreler=satici:Hepsiburada&siralama=artanfiyat");//Karaca
         linkList.add("https://www.hepsiburada.com/lego?filtreler=satici:Hepsiburada&siralama=artanfiyat");//Lego
+        linkList.add("https://www.hepsiburada.com/xiaomi?filtreler=satici:Hepsiburada&siralama=artanfiyat");//Xiaomi
     }
 }
