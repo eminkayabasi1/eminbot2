@@ -161,7 +161,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                                 "Eski Fiyat: " + eskiTyUrunModel.getPrice().getSellingPrice() + "\n" +
                                 "Yeni Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
-                                "Link:https://www.trendyol.com/" + tyUrunModel.getUrl();
+                                "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
 
                         if (tyUrunModel.getImageAlt().contains("Dyson") || tyUrunModel.getImageAlt().contains("DYSON") || tyUrunModel.getImageAlt().contains("dyson")) {
                             telegramMesajGonder(mesaj, "-4149448403", tyUrunModel.getId());
@@ -187,7 +187,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                                 "" + tyUrunModel.getImageAlt() + "\n" +
                                 "Fiyat Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
-                                "Link:https://www.trendyol.com/" + tyUrunModel.getUrl();
+                                "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
 
                         if (tyUrunModel.getImageAlt().contains("Dyson") || tyUrunModel.getImageAlt().contains("DYSON") || tyUrunModel.getImageAlt().contains("dyson")) {
                             telegramMesajGonder(mesaj, "-4149448403", tyUrunModel.getId());

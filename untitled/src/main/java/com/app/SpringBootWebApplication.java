@@ -27,7 +27,9 @@ import com.app.fku.hepsiburada.fonksiyon.threadclass.HepsiBuradaSepetUrunEkleJSO
 import com.app.fku.karaca.fonksiyon.service.KaracaJSONService;
 import com.app.fku.karaca.fonksiyon.threadclass.KaracaJSONThread;
 import com.app.fku.trendyol.fonksiyon.impl.TrendyolGenelServiceImpl;
+import com.app.fku.trendyol.fonksiyon.service.Trendyol5AlJSONService;
 import com.app.fku.trendyol.fonksiyon.service.TrendyolJSONService;
+import com.app.fku.trendyol.fonksiyon.threadclass.Trendyol5AlJSONThread;
 import com.app.fku.trendyol.fonksiyon.threadclass.TrendyolJSONThread;
 import com.app.fku.yeniamazon.fonksiyon.impl.YeniAmazonGenelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,6 +111,8 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
     //Trendyol
     @Autowired
     TrendyolJSONService trendyolJSONService;
+    @Autowired
+    Trendyol5AlJSONService trendyol5AlJSONService;
     //Trendyol
 
 
@@ -161,6 +165,13 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         karacaJSONThreads[0].karacaJSONService = karacaJSONService;
         threadsKaraca[0] = new Thread(karacaJSONThreads[0]);
         threadsKaraca[0].start();*/
+
+        Thread[] threadsTY5Al = new Thread[1];
+        Trendyol5AlJSONThread[] trendyol5AlJSONThreads = new Trendyol5AlJSONThread[1];
+        trendyol5AlJSONThreads[0] = new Trendyol5AlJSONThread();
+        trendyol5AlJSONThreads[0].trendyol5AlJSONService = trendyol5AlJSONService;
+        threadsTY5Al[0] = new Thread(trendyol5AlJSONThreads[0]);
+        threadsTY5Al[0].start();
 
         Thread[] threadsTY = new Thread[1];
         TrendyolJSONThread[] trendyolJSONThreads = new TrendyolJSONThread[1];

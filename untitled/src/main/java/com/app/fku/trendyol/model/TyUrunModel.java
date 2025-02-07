@@ -2,6 +2,8 @@ package com.app.fku.trendyol.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TyUrunModel {
     private String id;
@@ -12,6 +14,7 @@ public class TyUrunModel {
     private Double indirimOrani;
     private Long collectableCouponDiscount;
     private Boolean hasCollectableCoupon;
+    private List<TyUrunPromotionModel> promotions;
 
     public String getId() {
         return id;
@@ -75,5 +78,13 @@ public class TyUrunModel {
 
     public void setHasCollectableCoupon(Boolean hasCollectableCoupon) {
         this.hasCollectableCoupon = hasCollectableCoupon;
+    }
+
+    public List<TyUrunPromotionModel> getPromotions() {
+        return promotions;
+    }
+
+    public void setPromotions(List<TyUrunPromotionModel> promotions) {
+        this.promotions = promotions;
     }
 }
