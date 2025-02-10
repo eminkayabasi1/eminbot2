@@ -15,6 +15,7 @@ public class TyUrunModel {
     private Long collectableCouponDiscount;
     private Boolean hasCollectableCoupon;
     private List<TyUrunPromotionModel> promotions;
+    private List<TyUrunStampModel> stamps;
 
     public String getId() {
         return id;
@@ -86,5 +87,13 @@ public class TyUrunModel {
 
     public void setPromotions(List<TyUrunPromotionModel> promotions) {
         this.promotions = promotions;
+    }
+
+    public List<TyUrunStampModel> getStamps() {
+        return stamps;
+    }
+
+    public void setStamps(List<TyUrunStampModel> stamps) {
+        this.stamps = stamps;
     }
 }

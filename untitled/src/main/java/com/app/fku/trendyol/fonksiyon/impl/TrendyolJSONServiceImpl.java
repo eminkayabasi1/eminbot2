@@ -9,6 +9,7 @@ import com.app.fku.trendyol.fonksiyon.service.TrendyolJSONService;
 import com.app.fku.trendyol.model.TyGenelModel;
 import com.app.fku.trendyol.model.TyResultModel;
 import com.app.fku.trendyol.model.TyUrunModel;
+import com.app.fku.trendyol.model.TyUrunStampModel;
 import com.app.fku.trendyol.repository.TrendyolTelegramConfRepository;
 import com.app.fku.trendyol.repository.TyIstatistikRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -174,9 +175,42 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                         telegramMesajGonder(mesaj, "-4162270115", tyUrunModel.getId());
                         telegramMesajGonder(mesaj, "-4504951480", tyUrunModel.getId());
 
-                        if (tyUrunModel.getPrice().getSellingPrice() < eskiTyUrunModel.getPrice().getSellingPrice() * 0.70d) {
-                            telegramMesajGonder(mesaj, "-4654089282", tyUrunModel.getId());
+                        if (tyUrunModel.getPrice().getSellingPrice() <= eskiTyUrunModel.getPrice().getSellingPrice() * 0.90d && tyUrunModel.getPrice().getSellingPrice() >= eskiTyUrunModel.getPrice().getSellingPrice() * 0.80d) {
+                            telegramMesajGonder(mesaj, "-4673686337", tyUrunModel.getId());//10-20
+                        } else if (tyUrunModel.getPrice().getSellingPrice() < eskiTyUrunModel.getPrice().getSellingPrice() * 0.80d) {
+                            telegramMesajGonder(mesaj, "-4686393290", tyUrunModel.getId());//20 ve üstü
                         }
+                    }
+
+                    Boolean yeniUrunFlashMi = false;
+                    if (tyUrunModel.getStamps() != null && tyUrunModel.getStamps().size() > 0) {
+                        for (TyUrunStampModel tyUrunStampModel: tyUrunModel.getStamps()) {
+                            if (tyUrunStampModel.getTagType() != null && tyUrunStampModel.getTagType().equals("FlashSale")) {
+                                yeniUrunFlashMi = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    Boolean eskiUrunFlashMi = false;
+                    if (eskiTyUrunModel.getStamps() != null && eskiTyUrunModel.getStamps().size() > 0) {
+                        for (TyUrunStampModel tyUrunStampModel: eskiTyUrunModel.getStamps()) {
+                            if (tyUrunStampModel.getTagType() != null && tyUrunStampModel.getTagType().equals("FlashSale")) {
+                                eskiUrunFlashMi = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (eskiUrunFlashMi == false && yeniUrunFlashMi == true) {
+                        String mesaj = "" +
+                                "Flash Bildirim\n" +
+                                "" + tyUrunModel.getCategoryName() + "\n" +
+                                "" + tyUrunModel.getImageAlt() + "\n" +
+                                "Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
+                                "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
+                                "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
+                        telegramMesajGonder(mesaj, "-4662911491", tyUrunModel.getId());
                     }
                 } else {
                     if (!ilkTur) {
@@ -199,6 +233,27 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
 
                         telegramMesajGonder(mesaj, "-4162270115", tyUrunModel.getId());
                         telegramMesajGonder(mesaj, "-4504951480", tyUrunModel.getId());
+
+                        Boolean yeniUrunFlashMi = false;
+                        if (tyUrunModel.getStamps() != null && tyUrunModel.getStamps().size() > 0) {
+                            for (TyUrunStampModel tyUrunStampModel: tyUrunModel.getStamps()) {
+                                if (tyUrunStampModel.getTagType() != null && tyUrunStampModel.getTagType().equals("FlashSale")) {
+                                    yeniUrunFlashMi = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (yeniUrunFlashMi == true) {
+                            mesaj = "" +
+                                    "Flash Bildirim\n" +
+                                    "" + tyUrunModel.getCategoryName() + "\n" +
+                                    "" + tyUrunModel.getImageAlt() + "\n" +
+                                    "Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
+                                    "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
+                                    "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
+                            telegramMesajGonder(mesaj, "-4662911491", tyUrunModel.getId());
+                        }
                     }
                 }
 

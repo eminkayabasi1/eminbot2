@@ -169,6 +169,12 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
 
                         telegramMesajGonder(mesaj, "-4160976358");
                         telegramMesajGonder(mesaj, "-4101368331");
+
+                        if (hbSepetUrunModel.getPrice().getAmount() <= eskiHbUrunModel.getPrice().getAmount() * 0.90d && hbSepetUrunModel.getPrice().getAmount() >= eskiHbUrunModel.getPrice().getAmount() * 0.80d) {
+                            telegramMesajGonder(mesaj, "-4673686337");//10-20
+                        } else if (hbSepetUrunModel.getPrice().getAmount() < eskiHbUrunModel.getPrice().getAmount() * 0.80d) {
+                            telegramMesajGonder(mesaj, "-4686393290");//20 ve üstü
+                        }
                     }
                 } else {
                     if (!ilkTur) {
