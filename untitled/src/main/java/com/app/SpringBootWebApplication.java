@@ -29,8 +29,10 @@ import com.app.fku.karaca.fonksiyon.threadclass.KaracaJSONThread;
 import com.app.fku.trendyol.fonksiyon.impl.TrendyolGenelServiceImpl;
 import com.app.fku.trendyol.fonksiyon.service.Trendyol5AlJSONService;
 import com.app.fku.trendyol.fonksiyon.service.TrendyolJSONService;
+import com.app.fku.trendyol.fonksiyon.service.TrendyolTYJSONService;
 import com.app.fku.trendyol.fonksiyon.threadclass.Trendyol5AlJSONThread;
 import com.app.fku.trendyol.fonksiyon.threadclass.TrendyolJSONThread;
+import com.app.fku.trendyol.fonksiyon.threadclass.TrendyolTYJSONThread;
 import com.app.fku.yeniamazon.fonksiyon.impl.YeniAmazonGenelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -112,6 +114,8 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
     @Autowired
     TrendyolJSONService trendyolJSONService;
     @Autowired
+    TrendyolTYJSONService trendyolTYJSONService;
+    @Autowired
     Trendyol5AlJSONService trendyol5AlJSONService;
     //Trendyol
 
@@ -164,14 +168,14 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         karacaJSONThreads[0] = new KaracaJSONThread();
         karacaJSONThreads[0].karacaJSONService = karacaJSONService;
         threadsKaraca[0] = new Thread(karacaJSONThreads[0]);
-        threadsKaraca[0].start();*/
+        threadsKaraca[0].start();
 
         Thread[] threadsTY5Al = new Thread[1];
         Trendyol5AlJSONThread[] trendyol5AlJSONThreads = new Trendyol5AlJSONThread[1];
         trendyol5AlJSONThreads[0] = new Trendyol5AlJSONThread();
         trendyol5AlJSONThreads[0].trendyol5AlJSONService = trendyol5AlJSONService;
         threadsTY5Al[0] = new Thread(trendyol5AlJSONThreads[0]);
-        threadsTY5Al[0].start();
+        threadsTY5Al[0].start();*/
 
         Thread[] threadsTY = new Thread[1];
         TrendyolJSONThread[] trendyolJSONThreads = new TrendyolJSONThread[1];
@@ -179,6 +183,13 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         trendyolJSONThreads[0].trendyolJSONService = trendyolJSONService;
         threadsTY[0] = new Thread(trendyolJSONThreads[0]);
         threadsTY[0].start();
+
+        Thread[] threadsTYTY = new Thread[1];
+        TrendyolTYJSONThread[] trendyolTYJSONThreads = new TrendyolTYJSONThread[1];
+        trendyolTYJSONThreads[0] = new TrendyolTYJSONThread();
+        trendyolTYJSONThreads[0].trendyolTYJSONService = trendyolTYJSONService;
+        threadsTYTY[0] = new Thread(trendyolTYJSONThreads[0]);
+        threadsTYTY[0].start();
 
         /**
         Thread[] threadsDyson = new Thread[1];
@@ -195,12 +206,13 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         threadsArzum[0] = new Thread(arzumThreads[0]);
         threadsArzum[0].start();*/
 
+        /**aç
         Thread[] threadsAmazonx = new Thread[1];
         AmazonxThread[] amazonxThreads = new AmazonxThread[1];
         amazonxThreads[0] = new AmazonxThread();
         amazonxThreads[0].amazonxService = amazonxService;
         threadsAmazonx[0] = new Thread(amazonxThreads[0]);
-        threadsAmazonx[0].start();
+        threadsAmazonx[0].start();*/
         //JSONLAR
 
         headerListDoldur();

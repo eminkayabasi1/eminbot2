@@ -5,6 +5,7 @@ import com.app.fku.genel.entity.MailSoyad;
 import com.app.fku.genel.fonksiyon.service.GenelService;
 import com.app.fku.genel.repository.MailAdRepository;
 import com.app.fku.genel.repository.MailSoyadRepository;
+import org.asynchttpclient.AsyncHttpClient;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,10 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
+import static org.asynchttpclient.Dsl.*;
 
 @Service
 public class GenelServiceImpl implements GenelService {
@@ -90,42 +94,29 @@ public class GenelServiceImpl implements GenelService {
 
     @Override
     public void telegramMesajGonder(String mesaj, String chatId, String urunId, String token) throws IOException, InterruptedException {
-        //System.out.println(urunId + " " + chatId + " mesaj gönderdim. " + urunId);
-        /**
-        mesaj = mesaj.replace(" h", "xh");
-        mesaj = mesaj.replace(" H", "xh");
-        mesaj = mesaj.replace("ş", "s");
-        mesaj = mesaj.replace("Ş", "s");
-        mesaj = mesaj.replace("ı", "i");
-        mesaj = mesaj.replace("İ", "i");
-        mesaj = mesaj.replace("ğ", "g");
-        mesaj = mesaj.replace("Ğ", "g");
-        mesaj = mesaj.replace("ö", "o");
-        mesaj = mesaj.replace("Ö", "o");
-        mesaj = mesaj.replace("Ç", "c");
-        mesaj = mesaj.replace("ç", "c");
-        mesaj = mesaj.replace("Ü", "u");
-        mesaj = mesaj.replace("ü", "u");
-        mesaj = mesaj.replace("&", "");*/
-
         String urlString = "https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text=%s";
 
-        //Add Telegram token
-//        String apiToken = "1518724507:AAElzNxKZyZi_9oIGiX9tybXCS6Xd4JXRnk";//emincansubot
-//        String apiToken = "5326840199:AAEWApODrhD-pxplBYAgUIRMo2FI565mNfM";//fkumesajbot
-
-//        String apiToken = "1610924512:AAFdxtkwC0zSCyZnmWrmN4Gixj4JIgNO-6U";
         String text = mesaj;
-        //urlString = String.format(urlString, token, chatId, text);
         urlString = String.format(urlString, token, chatId, URLEncoder.encode(text, StandardCharsets.UTF_8.toString()));
         try {
+            AsyncHttpClient ASYNC_HTTP_CLIENT = asyncHttpClient();
+            ASYNC_HTTP_CLIENT.preparePost(urlString)
+                    .setMethod("GET")
+                    //.setHeader("Content-Type", "application/json")
+                    //.setHeader("Accept", "application/json")
+                    .execute()
+                    .toCompletableFuture()
+                    .join();
+            ASYNC_HTTP_CLIENT.close();
+
+            /**
             URL url = new URL(urlString);
             URLConnection conn = url.openConnection();
-            InputStream is = conn.getInputStream();
-        } catch (IOException e) {
+            InputStream is = conn.getInputStream();*/
+        } catch (Exception e) {
             e.printStackTrace();
             Thread.sleep(10000L);
-            telegramMesajGonder("Mesaj Hatasi--" + urunId, chatId, urunId, token);
+            //telegramMesajGonder("Mesaj Hatasi--" + urunId, chatId, urunId, token);
         }
     }
 

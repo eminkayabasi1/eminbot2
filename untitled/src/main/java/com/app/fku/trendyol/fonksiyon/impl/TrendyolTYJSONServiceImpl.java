@@ -6,6 +6,7 @@ import com.app.fku.genel.model.LinkModel;
 import com.app.fku.genel.utils.RandomString;
 import com.app.fku.trendyol.fonksiyon.service.TrendyolGenelService;
 import com.app.fku.trendyol.fonksiyon.service.TrendyolJSONService;
+import com.app.fku.trendyol.fonksiyon.service.TrendyolTYJSONService;
 import com.app.fku.trendyol.model.TyGenelModel;
 import com.app.fku.trendyol.model.TyResultModel;
 import com.app.fku.trendyol.model.TyUrunModel;
@@ -27,7 +28,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
-public class TrendyolJSONServiceImpl implements TrendyolJSONService {
+public class TrendyolTYJSONServiceImpl implements TrendyolTYJSONService {
 
     @Autowired
     TrendyolGenelService tyGenelService;
@@ -49,27 +50,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
 
     @Override
     public void sorgula() throws IOException, InterruptedException {
-        /**
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=101939%2C102900%2C794%2C103009%2C577%2C626%2C325%2C326%2C786%2C392%2C102989%2C373&wc=1104&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//Küçük Ev Aletleri
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=109453&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//Robot Süpürge
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=101470%2C101939%2C103505%2C794%2C143668%2C105334%2C102900&wc=144430&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//Giyilebilir Teknoloji
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=794%2C101939%2C101470%2C103505%2C109251%2C108166%2C145557%2C102323&wc=104025&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//Telefon
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=102323%2C101849%2C101606%2C794%2C104964%2C102324%2C103502%2C107655%2C108166%2C577%2C101470%2C103505&wc=103660&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//Bilgisayar Tablet
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=577%2C633%2C102989%2C392%2C387%2C101939%2C104971&wc=103109&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//Kişisel Bakım
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=1354&wb=326&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//Mutfak Tefal
-        urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=103138&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//Stanley Termos
-        */
-
-        //urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=1104&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=1104&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=144430&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=104025&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=108656%2C103665&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=103109&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=325%2C651%2C326%2C105973%2C653%2C103138&wc=1354&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=103138%2C325%2C326&wc=104593&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=104725%2C104764%2C467&wc=90&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=109092&wc=164208&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=651%2C401%2C325%2C326&mid=968&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d, "-4719689695"));//
 
 
         for (; ; ) {
@@ -164,53 +145,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
                                 "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
 
-                        if (tyUrunModel.getImageAlt().contains("Dyson") || tyUrunModel.getImageAlt().contains("DYSON") || tyUrunModel.getImageAlt().contains("dyson")) {
-                            telegramMesajGonder(mesaj, "-4149448403", tyUrunModel.getId());
-                        } else if (tyUrunModel.getImageAlt().contains("Stanley") || tyUrunModel.getImageAlt().contains("STANLEY") || tyUrunModel.getImageAlt().contains("stanley")) {
-                            telegramMesajGonder(mesaj, "-4506545515", tyUrunModel.getId());
-                        } else if (tyUrunModel.getImageAlt().contains("Lego") || tyUrunModel.getImageAlt().contains("LEGO") || tyUrunModel.getImageAlt().contains("lego")) {
-                            telegramMesajGonder(mesaj, "-4654789852", tyUrunModel.getId());
-                        }
-
-                        telegramMesajGonder(mesaj, "-4162270115", tyUrunModel.getId());
-                        telegramMesajGonder(mesaj, "-4504951480", tyUrunModel.getId());
-
-                        if (tyUrunModel.getPrice().getSellingPrice() <= eskiTyUrunModel.getPrice().getSellingPrice() * 0.90d && tyUrunModel.getPrice().getSellingPrice() >= eskiTyUrunModel.getPrice().getSellingPrice() * 0.80d) {
-                            telegramMesajGonder(mesaj, "-4673686337", tyUrunModel.getId());//10-20
-                        } else if (tyUrunModel.getPrice().getSellingPrice() < eskiTyUrunModel.getPrice().getSellingPrice() * 0.80d) {
-                            telegramMesajGonder(mesaj, "-4686393290", tyUrunModel.getId());//20 ve üstü
-                        }
-                    }
-
-                    Boolean yeniUrunFlashMi = false;
-                    if (tyUrunModel.getStamps() != null && tyUrunModel.getStamps().size() > 0) {
-                        for (TyUrunStampModel tyUrunStampModel: tyUrunModel.getStamps()) {
-                            if (tyUrunStampModel.getTagType() != null && tyUrunStampModel.getTagType().equals("FlashSale")) {
-                                yeniUrunFlashMi = true;
-                                break;
-                            }
-                        }
-                    }
-
-                    Boolean eskiUrunFlashMi = false;
-                    if (eskiTyUrunModel.getStamps() != null && eskiTyUrunModel.getStamps().size() > 0) {
-                        for (TyUrunStampModel tyUrunStampModel: eskiTyUrunModel.getStamps()) {
-                            if (tyUrunStampModel.getTagType() != null && tyUrunStampModel.getTagType().equals("FlashSale")) {
-                                eskiUrunFlashMi = true;
-                                break;
-                            }
-                        }
-                    }
-
-                    if (eskiUrunFlashMi == false && yeniUrunFlashMi == true) {
-                        String mesaj = "" +
-                                "Flash Bildirim\n" +
-                                "" + tyUrunModel.getCategoryName() + "\n" +
-                                "" + tyUrunModel.getImageAlt() + "\n" +
-                                "Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
-                                "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
-                                "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
-                        telegramMesajGonder(mesaj, "-4662911491", tyUrunModel.getId());
+                        telegramMesajGonder(mesaj, "-4719689695", tyUrunModel.getId());
                     }
                 } else {
                     if (!ilkTur) {
@@ -223,37 +158,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
                                 "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
 
-                        if (tyUrunModel.getImageAlt().contains("Dyson") || tyUrunModel.getImageAlt().contains("DYSON") || tyUrunModel.getImageAlt().contains("dyson")) {
-                            telegramMesajGonder(mesaj, "-4149448403", tyUrunModel.getId());
-                        } else if (tyUrunModel.getImageAlt().contains("Stanley") || tyUrunModel.getImageAlt().contains("STANLEY") || tyUrunModel.getImageAlt().contains("stanley")) {
-                            telegramMesajGonder(mesaj, "-4506545515", tyUrunModel.getId());
-                        } else if (tyUrunModel.getImageAlt().contains("Lego") || tyUrunModel.getImageAlt().contains("LEGO") || tyUrunModel.getImageAlt().contains("lego")) {
-                            telegramMesajGonder(mesaj, "-4654789852", tyUrunModel.getId());
-                        }
-
-                        telegramMesajGonder(mesaj, "-4162270115", tyUrunModel.getId());
-                        telegramMesajGonder(mesaj, "-4504951480", tyUrunModel.getId());
-
-                        Boolean yeniUrunFlashMi = false;
-                        if (tyUrunModel.getStamps() != null && tyUrunModel.getStamps().size() > 0) {
-                            for (TyUrunStampModel tyUrunStampModel: tyUrunModel.getStamps()) {
-                                if (tyUrunStampModel.getTagType() != null && tyUrunStampModel.getTagType().equals("FlashSale")) {
-                                    yeniUrunFlashMi = true;
-                                    break;
-                                }
-                            }
-                        }
-
-                        if (yeniUrunFlashMi == true) {
-                            mesaj = "" +
-                                    "Flash Bildirim\n" +
-                                    "" + tyUrunModel.getCategoryName() + "\n" +
-                                    "" + tyUrunModel.getImageAlt() + "\n" +
-                                    "Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
-                                    "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
-                                    "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
-                            telegramMesajGonder(mesaj, "-4662911491", tyUrunModel.getId());
-                        }
+                        telegramMesajGonder(mesaj, "-4719689695", tyUrunModel.getId());
                     }
                 }
 
@@ -262,7 +167,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
 
             ilkTur = false;
             //urunHashMap = yeniUrunHashMap;
-            System.out.println("TY: " + urunHashMap.size() + " : " + sdf.format(new Date()) + "\n");
+            System.out.println("TYTY2: " + urunHashMap.size() + " : " + sdf.format(new Date()) + "\n");
         }
     }
 
