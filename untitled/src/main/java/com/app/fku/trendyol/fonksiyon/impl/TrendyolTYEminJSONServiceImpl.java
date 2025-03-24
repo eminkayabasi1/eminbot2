@@ -5,12 +5,10 @@ import com.app.fku.genel.fonksiyon.service.LogService;
 import com.app.fku.genel.model.LinkModel;
 import com.app.fku.genel.utils.RandomString;
 import com.app.fku.trendyol.fonksiyon.service.TrendyolGenelService;
-import com.app.fku.trendyol.fonksiyon.service.TrendyolJSONService;
-import com.app.fku.trendyol.fonksiyon.service.TrendyolTYJSONService;
+import com.app.fku.trendyol.fonksiyon.service.TrendyolTYEminJSONService;
 import com.app.fku.trendyol.model.TyGenelModel;
 import com.app.fku.trendyol.model.TyResultModel;
 import com.app.fku.trendyol.model.TyUrunModel;
-import com.app.fku.trendyol.model.TyUrunStampModel;
 import com.app.fku.trendyol.repository.TrendyolTelegramConfRepository;
 import com.app.fku.trendyol.repository.TyIstatistikRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -28,7 +26,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
-public class TrendyolTYJSONServiceImpl implements TrendyolTYJSONService {
+public class TrendyolTYEminJSONServiceImpl implements TrendyolTYEminJSONService {
 
     @Autowired
     TrendyolGenelService tyGenelService;
@@ -50,7 +48,39 @@ public class TrendyolTYJSONServiceImpl implements TrendyolTYJSONService {
 
     @Override
     public void sorgula() throws IOException, InterruptedException {
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=392%2C794%2C325%2C326%2C651%2C105973%2C373%2C577%2C401%2C102900&mid=968&mb=kurumsal_satici&sst=PRICE_BY_ASC", 1.00d, "-4719689695"));//
+
+        /**
+         * 1- Arzum
+         * 2- Apple
+         * 3- Braun
+         * 4- DJI
+         * 5- FISHER PRICE
+         * 6- FISSLER
+         * 7- Huawei
+         * 8- HOT WHEELS
+         * 9- HP
+         * 10- Karaca
+         * 11- Kiwi
+         * 12- LEGO
+         */
+        //urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=108839%2C101849%2C348%2C392%2C104725%2C101470%2C325%2C467%2C103505%2C104764%2C633%2C109092%2C102323&mid=968&mb=kurumsal_satici&sst=PRICE_BY_ASC", 1.00d, "-4633543540"));//
+
+
+        /**
+         * 1- LENOVO
+         * 2- OPPO
+         * 3- Philips
+         * 4- Roborock
+         * 5- Samsung
+         * 6- Stanley
+         * 7- TEFAL
+         * 8- Vestel
+         * 9- Xiaomi
+         * 10- Yui
+         */
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=577%2C109251%2C143526%2C102900%2C794%2C101939%2C326%2C103138%2C102323%2C109108&mid=968&mb=kurumsal_satici&sst=PRICE_BY_ASC", 1.00d, "-4633543540"));//
+
+
 
 
         for (; ; ) {
@@ -169,7 +199,7 @@ public class TrendyolTYJSONServiceImpl implements TrendyolTYJSONService {
 
             ilkTur = false;
             //urunHashMap = yeniUrunHashMap;
-            System.out.println("TYTY2: " + urunHashMap.size() + " : " + sdf.format(new Date()) + "\n");
+            System.out.println("TYTYEmin: " + urunHashMap.size() + " : " + sdf.format(new Date()) + "\n");
         }
     }
 

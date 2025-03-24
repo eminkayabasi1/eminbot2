@@ -1,12 +1,9 @@
 package com.app;
 
 import com.app.fku.amazonx.fonksiyon.service.AmazonxService;
-import com.app.fku.amazonx.fonksiyon.threadclass.AmazonxThread;
 import com.app.fku.arzum.fonksiyon.service.ArzumService;
-import com.app.fku.arzum.fonksiyon.threadclass.ArzumThread;
 import com.app.fku.dyson.fonksiyon.impl.DysonGenelServiceImpl;
 import com.app.fku.dyson.fonksiyon.service.DysonService;
-import com.app.fku.dyson.fonksiyon.threadclass.DysonThread;
 import com.app.fku.genel.entity.FkuConf;
 import com.app.fku.genel.entity.Header;
 import com.app.fku.genel.entity.Proxy;
@@ -20,18 +17,16 @@ import com.app.fku.hepsiburada.fonksiyon.impl.HepsiBuradaSepetJSONService;
 import com.app.fku.hepsiburada.fonksiyon.impl.HepsiBuradaSepetOtomatikEkleJSONService;
 import com.app.fku.hepsiburada.fonksiyon.impl.HepsiBuradaSepetUrunEkleJSONService;
 import com.app.fku.hepsiburada.fonksiyon.service.HbGenelServiceImpl;
-import com.app.fku.hepsiburada.fonksiyon.threadclass.HepsiBuradaJSONThread;
 import com.app.fku.hepsiburada.fonksiyon.threadclass.HepsiBuradaSepetJSONThread;
 import com.app.fku.hepsiburada.fonksiyon.threadclass.HepsiBuradaSepetOtomatikEkleJSONThread;
-import com.app.fku.hepsiburada.fonksiyon.threadclass.HepsiBuradaSepetUrunEkleJSONThread;
 import com.app.fku.karaca.fonksiyon.service.KaracaJSONService;
-import com.app.fku.karaca.fonksiyon.threadclass.KaracaJSONThread;
 import com.app.fku.trendyol.fonksiyon.impl.TrendyolGenelServiceImpl;
 import com.app.fku.trendyol.fonksiyon.service.Trendyol5AlJSONService;
 import com.app.fku.trendyol.fonksiyon.service.TrendyolJSONService;
+import com.app.fku.trendyol.fonksiyon.service.TrendyolTYEminJSONService;
 import com.app.fku.trendyol.fonksiyon.service.TrendyolTYJSONService;
-import com.app.fku.trendyol.fonksiyon.threadclass.Trendyol5AlJSONThread;
 import com.app.fku.trendyol.fonksiyon.threadclass.TrendyolJSONThread;
+import com.app.fku.trendyol.fonksiyon.threadclass.TrendyolTYEminJSONThread;
 import com.app.fku.trendyol.fonksiyon.threadclass.TrendyolTYJSONThread;
 import com.app.fku.yeniamazon.fonksiyon.impl.YeniAmazonGenelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -116,6 +111,8 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
     @Autowired
     TrendyolTYJSONService trendyolTYJSONService;
     @Autowired
+    TrendyolTYEminJSONService trendyolTYEminJSONService;
+    @Autowired
     Trendyol5AlJSONService trendyol5AlJSONService;
     //Trendyol
 
@@ -190,6 +187,13 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         trendyolTYJSONThreads[0].trendyolTYJSONService = trendyolTYJSONService;
         threadsTYTY[0] = new Thread(trendyolTYJSONThreads[0]);
         threadsTYTY[0].start();
+
+        Thread[] threadsTYEminTY = new Thread[1];
+        TrendyolTYEminJSONThread[] trendyolTYEminJSONThreads = new TrendyolTYEminJSONThread[1];
+        trendyolTYEminJSONThreads[0] = new TrendyolTYEminJSONThread();
+        trendyolTYEminJSONThreads[0].trendyolTYEminJSONService = trendyolTYEminJSONService;
+        threadsTYEminTY[0] = new Thread(trendyolTYEminJSONThreads[0]);
+        threadsTYEminTY[0].start();
 
         /**
         Thread[] threadsDyson = new Thread[1];
