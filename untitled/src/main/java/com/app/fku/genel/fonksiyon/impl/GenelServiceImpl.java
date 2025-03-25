@@ -11,16 +11,13 @@ import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Random;
-import static org.asynchttpclient.Dsl.*;
+
+import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 @Service
 public class GenelServiceImpl implements GenelService {
