@@ -167,8 +167,12 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                                 "Yeni Fiyat: " + hbSepetUrunModel.getPrice().getAmount() + "\n" +
                                 "Link:" + hbSepetUrunModel.getProduct().getUrl();
 
-                        telegramMesajGonder(mesaj, "-4160976358");
-                        telegramMesajGonder(mesaj, "-4101368331");
+                        if (hbSepetUrunModel.getProduct().getName().contains("LEGO")) {
+                            telegramMesajGonder(mesaj, "-4688882468");
+                        } else {
+                            telegramMesajGonder(mesaj, "-4160976358");
+                            telegramMesajGonder(mesaj, "-4101368331");
+                        }
 
                         if (hbSepetUrunModel.getPrice().getAmount() <= eskiHbUrunModel.getPrice().getAmount() * 0.90d && hbSepetUrunModel.getPrice().getAmount() >= eskiHbUrunModel.getPrice().getAmount() * 0.80d) {
                             telegramMesajGonder(mesaj, "-4673686337");//10-20
@@ -185,8 +189,12 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                                 "Fiyat Fiyat: " + hbSepetUrunModel.getPrice().getAmount() + "\n" +
                                 "Link:" + hbSepetUrunModel.getProduct().getUrl();
 
-                        telegramMesajGonder(mesaj, "-4160976358");
-                        telegramMesajGonder(mesaj, "-4101368331");
+                        if (hbSepetUrunModel.getProduct().getName().contains("LEGO")) {
+                            telegramMesajGonder(mesaj, "-4688882468");
+                        } else {
+                            telegramMesajGonder(mesaj, "-4160976358");
+                            telegramMesajGonder(mesaj, "-4101368331");
+                        }
                     }
                 }
 
