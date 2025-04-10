@@ -1,6 +1,7 @@
 package com.app;
 
 import com.app.fku.amazonx.fonksiyon.service.AmazonxService;
+import com.app.fku.amazonx.fonksiyon.threadclass.AmazonxThread;
 import com.app.fku.arzum.fonksiyon.service.ArzumService;
 import com.app.fku.dyson.fonksiyon.impl.DysonGenelServiceImpl;
 import com.app.fku.dyson.fonksiyon.service.DysonService;
@@ -137,12 +138,13 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         threadsHB[0] = new Thread(hepsiBuradaJSONThreads[0]);
         threadsHB[0].start();*/
 
+        /**aç
         Thread[] threadsHBSepet = new Thread[1];
         HepsiBuradaSepetJSONThread[] hepsiBuradaSepetJSONThreads = new HepsiBuradaSepetJSONThread[1];
         hepsiBuradaSepetJSONThreads[0] = new HepsiBuradaSepetJSONThread();
         hepsiBuradaSepetJSONThreads[0].hepsiBuradaSepetJSONService = hepsiBuradaSepetJSONService;
         threadsHBSepet[0] = new Thread(hepsiBuradaSepetJSONThreads[0]);
-        threadsHBSepet[0].start();
+        threadsHBSepet[0].start();*/
 
         /**
         Thread[] threadsHBSepetUE = new Thread[1];
@@ -152,12 +154,13 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         threadsHBSepetUE[0] = new Thread(hepsiBuradaSepetUEJSONThreads[0]);
         threadsHBSepetUE[0].start();*/
 
+        /**aç
         Thread[] threadsHBSepetOE = new Thread[1];
         HepsiBuradaSepetOtomatikEkleJSONThread[] hepsiBuradaSepetOtomatikEkleJSONThreads = new HepsiBuradaSepetOtomatikEkleJSONThread[1];
         hepsiBuradaSepetOtomatikEkleJSONThreads[0] = new HepsiBuradaSepetOtomatikEkleJSONThread();
         hepsiBuradaSepetOtomatikEkleJSONThreads[0].hepsiBuradaSepetOtomatikEkleJSONService = hepsiBuradaSepetOtomatikEkleJSONService;
         threadsHBSepetOE[0] = new Thread(hepsiBuradaSepetOtomatikEkleJSONThreads[0]);
-        threadsHBSepetOE[0].start();
+        threadsHBSepetOE[0].start();*/
 
         /**
         Thread[] threadsKaraca = new Thread[1];
@@ -210,13 +213,12 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         threadsArzum[0] = new Thread(arzumThreads[0]);
         threadsArzum[0].start();*/
 
-        /**aç
         Thread[] threadsAmazonx = new Thread[1];
         AmazonxThread[] amazonxThreads = new AmazonxThread[1];
         amazonxThreads[0] = new AmazonxThread();
         amazonxThreads[0].amazonxService = amazonxService;
         threadsAmazonx[0] = new Thread(amazonxThreads[0]);
-        threadsAmazonx[0].start();*/
+        threadsAmazonx[0].start();
         //JSONLAR
 
         headerListDoldur();
