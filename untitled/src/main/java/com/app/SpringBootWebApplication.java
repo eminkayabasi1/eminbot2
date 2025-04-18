@@ -130,52 +130,20 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         //genelService.telegramMesajGonder(hostname, "-659185836", 10L);
 
         //JSONLAR
-        /**
-        Thread[] threadsHB = new Thread[1];
-        HepsiBuradaJSONThread[] hepsiBuradaJSONThreads = new HepsiBuradaJSONThread[1];
-        hepsiBuradaJSONThreads[0] = new HepsiBuradaJSONThread();
-        hepsiBuradaJSONThreads[0].hepsiBuradaJSONService = hepsiBuradaJSONService;
-        threadsHB[0] = new Thread(hepsiBuradaJSONThreads[0]);
-        threadsHB[0].start();*/
 
-        /**aç
         Thread[] threadsHBSepet = new Thread[1];
         HepsiBuradaSepetJSONThread[] hepsiBuradaSepetJSONThreads = new HepsiBuradaSepetJSONThread[1];
         hepsiBuradaSepetJSONThreads[0] = new HepsiBuradaSepetJSONThread();
         hepsiBuradaSepetJSONThreads[0].hepsiBuradaSepetJSONService = hepsiBuradaSepetJSONService;
         threadsHBSepet[0] = new Thread(hepsiBuradaSepetJSONThreads[0]);
-        threadsHBSepet[0].start();*/
+        threadsHBSepet[0].start();
 
-        /**
-        Thread[] threadsHBSepetUE = new Thread[1];
-        HepsiBuradaSepetUrunEkleJSONThread[] hepsiBuradaSepetUEJSONThreads = new HepsiBuradaSepetUrunEkleJSONThread[1];
-        hepsiBuradaSepetUEJSONThreads[0] = new HepsiBuradaSepetUrunEkleJSONThread();
-        hepsiBuradaSepetUEJSONThreads[0].hepsiBuradaSepetJSONService = hepsiBuradaSepetUrunEkleJSONService;
-        threadsHBSepetUE[0] = new Thread(hepsiBuradaSepetUEJSONThreads[0]);
-        threadsHBSepetUE[0].start();*/
-
-        /**aç
         Thread[] threadsHBSepetOE = new Thread[1];
         HepsiBuradaSepetOtomatikEkleJSONThread[] hepsiBuradaSepetOtomatikEkleJSONThreads = new HepsiBuradaSepetOtomatikEkleJSONThread[1];
         hepsiBuradaSepetOtomatikEkleJSONThreads[0] = new HepsiBuradaSepetOtomatikEkleJSONThread();
         hepsiBuradaSepetOtomatikEkleJSONThreads[0].hepsiBuradaSepetOtomatikEkleJSONService = hepsiBuradaSepetOtomatikEkleJSONService;
         threadsHBSepetOE[0] = new Thread(hepsiBuradaSepetOtomatikEkleJSONThreads[0]);
-        threadsHBSepetOE[0].start();*/
-
-        /**
-        Thread[] threadsKaraca = new Thread[1];
-        KaracaJSONThread[] karacaJSONThreads = new KaracaJSONThread[1];
-        karacaJSONThreads[0] = new KaracaJSONThread();
-        karacaJSONThreads[0].karacaJSONService = karacaJSONService;
-        threadsKaraca[0] = new Thread(karacaJSONThreads[0]);
-        threadsKaraca[0].start();
-
-        Thread[] threadsTY5Al = new Thread[1];
-        Trendyol5AlJSONThread[] trendyol5AlJSONThreads = new Trendyol5AlJSONThread[1];
-        trendyol5AlJSONThreads[0] = new Trendyol5AlJSONThread();
-        trendyol5AlJSONThreads[0].trendyol5AlJSONService = trendyol5AlJSONService;
-        threadsTY5Al[0] = new Thread(trendyol5AlJSONThreads[0]);
-        threadsTY5Al[0].start();*/
+        threadsHBSepetOE[0].start();
 
         Thread[] threadsTY = new Thread[1];
         TrendyolJSONThread[] trendyolJSONThreads = new TrendyolJSONThread[1];
@@ -198,27 +166,55 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         threadsTYEminTY[0] = new Thread(trendyolTYEminJSONThreads[0]);
         threadsTYEminTY[0].start();
 
-        /**
-        Thread[] threadsDyson = new Thread[1];
-        DysonThread[] dysonThreads = new DysonThread[1];
-        dysonThreads[0] = new DysonThread();
-        dysonThreads[0].dysonService = dysonService;
-        threadsDyson[0] = new Thread(dysonThreads[0]);
-        threadsDyson[0].start();
-
-        Thread[] threadsArzum = new Thread[1];
-        ArzumThread[] arzumThreads = new ArzumThread[1];
-        arzumThreads[0] = new ArzumThread();
-        arzumThreads[0].arzumService = arzumService;
-        threadsArzum[0] = new Thread(arzumThreads[0]);
-        threadsArzum[0].start();*/
-
         Thread[] threadsAmazonx = new Thread[1];
         AmazonxThread[] amazonxThreads = new AmazonxThread[1];
         amazonxThreads[0] = new AmazonxThread();
         amazonxThreads[0].amazonxService = amazonxService;
         threadsAmazonx[0] = new Thread(amazonxThreads[0]);
         threadsAmazonx[0].start();
+
+        /**
+         Thread[] threadsHB = new Thread[1];
+         HepsiBuradaJSONThread[] hepsiBuradaJSONThreads = new HepsiBuradaJSONThread[1];
+         hepsiBuradaJSONThreads[0] = new HepsiBuradaJSONThread();
+         hepsiBuradaJSONThreads[0].hepsiBuradaJSONService = hepsiBuradaJSONService;
+         threadsHB[0] = new Thread(hepsiBuradaJSONThreads[0]);
+         threadsHB[0].start();
+
+         Thread[] threadsHBSepetUE = new Thread[1];
+         HepsiBuradaSepetUrunEkleJSONThread[] hepsiBuradaSepetUEJSONThreads = new HepsiBuradaSepetUrunEkleJSONThread[1];
+         hepsiBuradaSepetUEJSONThreads[0] = new HepsiBuradaSepetUrunEkleJSONThread();
+         hepsiBuradaSepetUEJSONThreads[0].hepsiBuradaSepetJSONService = hepsiBuradaSepetUrunEkleJSONService;
+         threadsHBSepetUE[0] = new Thread(hepsiBuradaSepetUEJSONThreads[0]);
+         threadsHBSepetUE[0].start();
+
+         Thread[] threadsKaraca = new Thread[1];
+         KaracaJSONThread[] karacaJSONThreads = new KaracaJSONThread[1];
+         karacaJSONThreads[0] = new KaracaJSONThread();
+         karacaJSONThreads[0].karacaJSONService = karacaJSONService;
+         threadsKaraca[0] = new Thread(karacaJSONThreads[0]);
+         threadsKaraca[0].start();
+
+         Thread[] threadsTY5Al = new Thread[1];
+         Trendyol5AlJSONThread[] trendyol5AlJSONThreads = new Trendyol5AlJSONThread[1];
+         trendyol5AlJSONThreads[0] = new Trendyol5AlJSONThread();
+         trendyol5AlJSONThreads[0].trendyol5AlJSONService = trendyol5AlJSONService;
+         threadsTY5Al[0] = new Thread(trendyol5AlJSONThreads[0]);
+         threadsTY5Al[0].start();
+
+         Thread[] threadsDyson = new Thread[1];
+         DysonThread[] dysonThreads = new DysonThread[1];
+         dysonThreads[0] = new DysonThread();
+         dysonThreads[0].dysonService = dysonService;
+         threadsDyson[0] = new Thread(dysonThreads[0]);
+         threadsDyson[0].start();
+
+         Thread[] threadsArzum = new Thread[1];
+         ArzumThread[] arzumThreads = new ArzumThread[1];
+         arzumThreads[0] = new ArzumThread();
+         arzumThreads[0].arzumService = arzumService;
+         threadsArzum[0] = new Thread(arzumThreads[0]);
+         threadsArzum[0].start();*/
         //JSONLAR
 
         headerListDoldur();
