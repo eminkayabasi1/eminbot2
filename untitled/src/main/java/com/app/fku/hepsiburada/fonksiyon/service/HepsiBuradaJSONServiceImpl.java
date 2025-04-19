@@ -183,9 +183,9 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                                 }
                                 HbSepetUrunModel tmpHbSepetUrunModel = kuponluHashMap.get(hbSepetUrunModel.getProduct().getUrl());
                                 if (tmpHbSepetUrunModel == null) {
-                                    kuponluHashMap.put(hbSepetUrunModel.getProduct().getUrl(), hbSepetUrunModel);
+                                    kuponluHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
                                 } else if (hbSepetUrunModel.getPrice().getAmount() < tmpHbSepetUrunModel.getPrice().getAmount()) {
-                                    kuponluHashMap.put(hbSepetUrunModel.getProduct().getUrl(), hbSepetUrunModel);
+                                    kuponluHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
                                 }
                             }
                         }
