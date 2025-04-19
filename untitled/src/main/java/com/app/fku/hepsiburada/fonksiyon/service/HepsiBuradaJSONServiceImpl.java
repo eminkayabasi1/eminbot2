@@ -4,11 +4,11 @@ import com.app.fku.genel.fonksiyon.service.GenelService;
 import com.app.fku.genel.fonksiyon.service.LogService;
 import com.app.fku.hepsiburada.fonksiyon.impl.HbGenelService;
 import com.app.fku.hepsiburada.fonksiyon.impl.HepsiBuradaSepetJSONService;
-import com.app.fku.hepsiburada.model.HbRequestMetadataModel;
-import com.app.fku.hepsiburada.model.HbSepetGenel1Model;
-import com.app.fku.hepsiburada.model.HbSepetUrunModel;
-import com.app.fku.hepsiburada.model.HbTokenModel;
+import com.app.fku.hepsiburada.model.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import org.json.JSONException;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.openqa.selenium.json.JsonException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +36,7 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
 
     @Override
     public void sorgula() throws IOException, InterruptedException {
+
         hbTokenHashMap.put(
                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3NDUwMDAyMDksImV4cCI6MTc0NTI1OTQwOSwiaWF0IjoxNzQ1MDAwMjA5LCJVc2VySWQiOiI3Y2YxZDZmNS00NjhjLTRkZGEtOTlkZC0zNjNlZGVmODRlZjkiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjFAYXRsYXNwb3N0YS5jb20iLCJJc0F1dGhlbnRpY2F0ZWQiOiJUcnVlIiwiQXBwS2V5IjoiQUY3RjJBMzctQ0M0Qi00RjFDLTg3RkQtRkYzNjQyRjY3RUNCIiwiUHJvdmlkZXIiOiJIZXBzaWJ1cmFkYSIsIlNoYXJlRGF0YVBlcm1pc3Npb24iOiJUcnVlIiwiVGVuYW50IjoiU1BBIiwiSnRpIjoiY2RkMjVlZDctMTQ1YS00NGRmLWIyNWMtNzZjMDFjOWM5YmY2IiwicCI6eyJ0IjpbXSwiZSI6IitvMFJGODFnVklTM1kwa0s4aGxFSzJQRXlOSjBmMVBMMElHbkFucEJFME09In19.cIGP8cHDTMKNall_pOqKl841SSO626fBwfEjIh6ZQc4",
                 new HbTokenModel("47b14cfb-2cad-471a-85de-ebe4684ee95f", "cc7c5241-6017-44b2-9528-93c8d8907efb", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3NDUwMDAyMDksImV4cCI6MTc0NTI1OTQwOSwiaWF0IjoxNzQ1MDAwMjA5LCJVc2VySWQiOiI3Y2YxZDZmNS00NjhjLTRkZGEtOTlkZC0zNjNlZGVmODRlZjkiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjFAYXRsYXNwb3N0YS5jb20iLCJJc0F1dGhlbnRpY2F0ZWQiOiJUcnVlIiwiQXBwS2V5IjoiQUY3RjJBMzctQ0M0Qi00RjFDLTg3RkQtRkYzNjQyRjY3RUNCIiwiUHJvdmlkZXIiOiJIZXBzaWJ1cmFkYSIsIlNoYXJlRGF0YVBlcm1pc3Npb24iOiJUcnVlIiwiVGVuYW50IjoiU1BBIiwiSnRpIjoiY2RkMjVlZDctMTQ1YS00NGRmLWIyNWMtNzZjMDFjOWM5YmY2IiwicCI6eyJ0IjpbXSwiZSI6IitvMFJGODFnVklTM1kwa0s4aGxFSzJQRXlOSjBmMVBMMElHbkFucEJFME09In19.cIGP8cHDTMKNall_pOqKl841SSO626fBwfEjIh6ZQc4"));//emin.1@atlasposta.com - Aa123456
@@ -124,6 +125,7 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3Mzg0MDI1MTMsImV4cCI6MTczODY2MTcxMywiaWF0IjoxNzM4NDAyNTEzLCJVc2VySWQiOiJjMmZlMWE4Ni1jMjBlLTRmOTQtOGQxNC1kMDI5YzdjODliOWEiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjI5QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjQzYjVlMGFhLTAxOGQtNDU4Yi04ZGNiLWMzZjQ3ZjAxNDJiNSIsInAiOnsidCI6W10sImUiOiJ6SFZYMzQrWGJaRFdxOTFxTE02WExrTE9BakttSk8wN0o1L2xzeW1jSWlrPSJ9fQ.uqqCC4yiej729wZnZsKudBwfbDtGk2hmRbCUxyOm8xo",
                 new HbTokenModel("47b14cfb-2cad-471a-85de-ebe4684ee95f", "cc7c5241-6017-44b2-9528-93c8d8907efb", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3Mzg0MDI1MTMsImV4cCI6MTczODY2MTcxMywiaWF0IjoxNzM4NDAyNTEzLCJVc2VySWQiOiJjMmZlMWE4Ni1jMjBlLTRmOTQtOGQxNC1kMDI5YzdjODliOWEiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjI5QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjQzYjVlMGFhLTAxOGQtNDU4Yi04ZGNiLWMzZjQ3ZjAxNDJiNSIsInAiOnsidCI6W10sImUiOiJ6SFZYMzQrWGJaRFdxOTFxTE02WExrTE9BakttSk8wN0o1L2xzeW1jSWlrPSJ9fQ.uqqCC4yiej729wZnZsKudBwfbDtGk2hmRbCUxyOm8xo"));//emin.29@atlasposta.com - Aa123456
 
+
         for (; ; ) {
             try {
                 anaislem();
@@ -137,20 +139,67 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
         HashMap<String, HbSepetUrunModel> urunHashMap = new HashMap<>();
 
         boolean ilkTur = true;
-        for (;;) {
+        for (; ; ) {
             List<HbSepetUrunModel> topluUrunList = new ArrayList<>();
 
             HashMap<String, HbSepetUrunModel> yeniUrunHashMap = new HashMap<>();
-            for (HbTokenModel hbTokenModel: hbTokenHashMap.values()) {
+            for (HbTokenModel hbTokenModel : hbTokenHashMap.values()) {
                 int urunSayisi = 0;
-                List<HbSepetUrunModel> hbSepetUrunModelList = readJsonFromUrl(hbTokenModel);
-                for (HbSepetUrunModel hbSepetUrunModel : hbSepetUrunModelList) {
-                    if (hbSepetUrunModel.getPrice() == null || hbSepetUrunModel.getPrice().getAmount() == null || hbSepetUrunModel.getPrice().getAmount() == 0) {
-                        continue;
+                HbSepetGenel3Model hbSepetGenel3Model = readJsonFromUrl(hbTokenModel);
+                List<HbSepetKuponModel> kullanilabilirKuponList = new ArrayList<>();
+                if (hbSepetGenel3Model.getEligibleCouponList() != null && hbSepetGenel3Model.getEligibleCouponList().size() > 0) {
+                    for (HbSepetKuponModel hbSepetKuponModel : hbSepetGenel3Model.getEligibleCouponList()) {
+                        kullanilabilirKuponList.add(hbSepetKuponModel);
                     }
-                    urunSayisi++;
-                    topluUrunList.add(hbSepetUrunModel);
                 }
+
+                if (kullanilabilirKuponList.size() == 0) {
+                    List<HbSepetUrunModel> hbSepetUrunModelList = hbSepetGenel3Model.getBasketItems();
+                    for (HbSepetUrunModel hbSepetUrunModel : hbSepetUrunModelList) {
+                        if (hbSepetUrunModel.getPrice() == null || hbSepetUrunModel.getPrice().getAmount() == null || hbSepetUrunModel.getPrice().getAmount() == 0) {
+                            continue;
+                        }
+                        urunSayisi++;
+                        topluUrunList.add(hbSepetUrunModel);
+                    }
+                } else {
+                    HashMap<String, HbSepetUrunModel> kuponluHashMap = new HashMap<>();
+                    for (HbSepetKuponModel hbSepetKuponModel : kullanilabilirKuponList) {
+                        if (hbSepetKuponModel.getApplied()) {
+                            //Kupon hazırda kullanılmış
+                            for (HbSepetUrunModel hbSepetUrunModel : hbSepetGenel3Model.getBasketItems()) {
+                                if (hbSepetUrunModel.getPrice() == null || hbSepetUrunModel.getPrice().getAmount() == null || hbSepetUrunModel.getPrice().getAmount() == 0) {
+                                    continue;
+                                }
+                                kuponluHashMap.put(hbSepetUrunModel.getProduct().getUrl(), hbSepetUrunModel);
+                            }
+                        } else {
+                            //Kupon kullanılmamış
+                            kuponKullan(hbTokenModel, new HbSepetKuponKullanModel(hbSepetKuponModel.getCampaignId(), hbSepetKuponModel.getTargetGroupId()));
+                            HbSepetGenel3Model hbSepetGenel3ModelForKupon = readJsonFromUrl(hbTokenModel);
+                            for (HbSepetUrunModel hbSepetUrunModel : hbSepetGenel3ModelForKupon.getBasketItems()) {
+                                if (hbSepetUrunModel.getPrice() == null || hbSepetUrunModel.getPrice().getAmount() == null || hbSepetUrunModel.getPrice().getAmount() == 0) {
+                                    continue;
+                                }
+                                HbSepetUrunModel tmpHbSepetUrunModel = kuponluHashMap.get(hbSepetUrunModel.getProduct().getUrl());
+                                if (tmpHbSepetUrunModel == null) {
+                                    kuponluHashMap.put(hbSepetUrunModel.getProduct().getUrl(), hbSepetUrunModel);
+                                } else if (hbSepetUrunModel.getPrice().getAmount() < tmpHbSepetUrunModel.getPrice().getAmount()) {
+                                    kuponluHashMap.put(hbSepetUrunModel.getProduct().getUrl(), hbSepetUrunModel);
+                                }
+                            }
+                        }
+                    }
+
+                    for (HbSepetUrunModel hbSepetUrunModel : new ArrayList<>(kuponluHashMap.values())) {
+                        if (hbSepetUrunModel.getPrice() == null || hbSepetUrunModel.getPrice().getAmount() == null || hbSepetUrunModel.getPrice().getAmount() == 0) {
+                            continue;
+                        }
+                        urunSayisi++;
+                        topluUrunList.add(hbSepetUrunModel);
+                    }
+                }
+
                 hbTokenModel.setUrunSayisi(urunSayisi);
                 hbTokenHashMap.put(hbTokenModel.getBearerTokent(), hbTokenModel);
             }
@@ -210,7 +259,7 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
         genelService.telegramMesajGonder(mesaj, chatId, "1", "5326840199:AAEWApODrhD-pxplBYAgUIRMo2FI565mNfM");
     }
 
-    public List<HbSepetUrunModel> readJsonFromUrl(HbTokenModel hbTokenModel) throws IOException, JsonException {
+    public HbSepetGenel3Model readJsonFromUrl(HbTokenModel hbTokenModel) throws IOException, JsonException {
         for (int i = 1; i > 0; i++) {
             try {
                 HashMap<String, String> headerMap = new HashMap<>();
@@ -227,11 +276,43 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                                 .ignoreContentType(true).execute().body();
                 ObjectMapper mapper = new ObjectMapper();
                 HbSepetGenel1Model hbSepetGenel1Model = mapper.readValue(json, HbSepetGenel1Model.class);
-                return hbSepetGenel1Model.getResult().getBasket().getBasketItems();
+                return hbSepetGenel1Model.getResult().getBasket();
             } catch (Exception e) {
                 System.out.println("HB Sepet Hata TOKEN: " + i + " - " + hbTokenModel.getBearerTokent());
             }
         }
         return null;
+    }
+
+    public void kuponKullan(HbTokenModel hbTokenModel, HbSepetKuponKullanModel model) throws IOException, JSONException {
+
+        for (int i = 1; i > 0; i++) {
+            try {
+
+                HashMap<String, String> headerMap = new HashMap<>();
+                headerMap.put("authorization", "Bearer " + hbTokenModel.getBearerTokent());
+                headerMap.put("content-type", "application/json; charset=UTF-8");
+                headerMap.put("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36");
+
+                ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+
+                String jsonStr = ow.writeValueAsString(model);
+
+                try {
+                    Jsoup
+                            .connect("https://obiwan-gw.hepsiburada.com/api/v1/coupons/use")
+                            //.userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
+                            .headers(headerMap)
+                            .method(Connection.Method.POST)
+                            .requestBody(jsonStr)
+                            .ignoreContentType(true).execute().body();
+                } catch (Exception e) {
+                    System.out.println("Kupon ekleme hatası.");
+                }
+                return;
+            } catch (Exception e) {
+                System.out.println("HB Kupon Ekleme Hata TOKEN: " + i + " - " + hbTokenModel.getBearerTokent());
+            }
+        }
     }
 }

@@ -138,6 +138,7 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         threadsHBSepet[0] = new Thread(hepsiBuradaSepetJSONThreads[0]);
         threadsHBSepet[0].start();
 
+        /**
         Thread[] threadsHBSepetOE = new Thread[1];
         HepsiBuradaSepetOtomatikEkleJSONThread[] hepsiBuradaSepetOtomatikEkleJSONThreads = new HepsiBuradaSepetOtomatikEkleJSONThread[1];
         hepsiBuradaSepetOtomatikEkleJSONThreads[0] = new HepsiBuradaSepetOtomatikEkleJSONThread();
@@ -171,7 +172,7 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         amazonxThreads[0] = new AmazonxThread();
         amazonxThreads[0].amazonxService = amazonxService;
         threadsAmazonx[0] = new Thread(amazonxThreads[0]);
-        threadsAmazonx[0].start();
+        threadsAmazonx[0].start();*/
 
         /**
          Thread[] threadsHB = new Thread[1];
