@@ -165,13 +165,17 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                 } else {
                     HashMap<String, HbSepetUrunModel> kuponluHashMap = new HashMap<>();
                     for (HbSepetKuponModel hbSepetKuponModel : kullanilabilirKuponList) {
+                        if (!hbSepetKuponModel.getTargetGroupId().equals(717593L)) {
+                            continue;
+                        }
+
                         if (hbSepetKuponModel.getApplied()) {
                             //Kupon hazırda kullanılmış
                             for (HbSepetUrunModel hbSepetUrunModel : hbSepetGenel3Model.getBasketItems()) {
                                 if (hbSepetUrunModel.getPrice() == null || hbSepetUrunModel.getPrice().getAmount() == null || hbSepetUrunModel.getPrice().getAmount() == 0) {
                                     continue;
                                 }
-                                kuponluHashMap.put(hbSepetUrunModel.getProduct().getUrl(), hbSepetUrunModel);
+                                kuponluHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
                             }
                         } else {
                             //Kupon kullanılmamış
@@ -181,7 +185,7 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                                 if (hbSepetUrunModel.getPrice() == null || hbSepetUrunModel.getPrice().getAmount() == null || hbSepetUrunModel.getPrice().getAmount() == 0) {
                                     continue;
                                 }
-                                HbSepetUrunModel tmpHbSepetUrunModel = kuponluHashMap.get(hbSepetUrunModel.getProduct().getUrl());
+                                HbSepetUrunModel tmpHbSepetUrunModel = kuponluHashMap.get(hbSepetUrunModel.getProduct().getSku());
                                 if (tmpHbSepetUrunModel == null) {
                                     kuponluHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
                                 } else if (hbSepetUrunModel.getPrice().getAmount() < tmpHbSepetUrunModel.getPrice().getAmount()) {
@@ -204,7 +208,19 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                 hbTokenHashMap.put(hbTokenModel.getBearerTokent(), hbTokenModel);
             }
 
-            for (HbSepetUrunModel hbSepetUrunModel : topluUrunList) {
+            HashMap<String, HbSepetUrunModel> resultHashMap = new HashMap<>();
+            for (HbSepetUrunModel hbSepetUrunModel: topluUrunList) {
+                HbSepetUrunModel tmp = resultHashMap.get(hbSepetUrunModel.getProduct().getSku());
+                if (tmp != null) {
+                    if (hbSepetUrunModel.getPrice().getAmount() < tmp.getPrice().getAmount()) {
+                        resultHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
+                    }
+                } else {
+                    resultHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
+                }
+            }
+
+            for (HbSepetUrunModel hbSepetUrunModel : resultHashMap.values()) {
                 HbSepetUrunModel eskiHbUrunModel = urunHashMap.get(hbSepetUrunModel.getProduct().getSku());
                 if (eskiHbUrunModel != null) {
                     //Önceden var olan ürün, fiyat kontrol et
