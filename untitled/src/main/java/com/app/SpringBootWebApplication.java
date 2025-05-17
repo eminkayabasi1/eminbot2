@@ -21,6 +21,8 @@ import com.app.fku.hepsiburada.fonksiyon.service.HbGenelServiceImpl;
 import com.app.fku.hepsiburada.fonksiyon.threadclass.HepsiBuradaSepetJSONThread;
 import com.app.fku.hepsiburada.fonksiyon.threadclass.HepsiBuradaSepetOtomatikEkleJSONThread;
 import com.app.fku.karaca.fonksiyon.service.KaracaJSONService;
+import com.app.fku.tesla.TeslaJSONService;
+import com.app.fku.tesla.TeslaJSONThread;
 import com.app.fku.trendyol.fonksiyon.impl.TrendyolGenelServiceImpl;
 import com.app.fku.trendyol.fonksiyon.service.Trendyol5AlJSONService;
 import com.app.fku.trendyol.fonksiyon.service.TrendyolJSONService;
@@ -118,6 +120,8 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
     //Trendyol
 
 
+    @Autowired
+    TeslaJSONService teslaJSONService;
 
 
     @EventListener(ApplicationReadyEvent.class)
@@ -130,6 +134,14 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         //genelService.telegramMesajGonder(hostname, "-659185836", 10L);
 
         //JSONLAR
+
+        /**
+        Thread[] threadsTesla = new Thread[1];
+        TeslaJSONThread[] teslaJSONThreads = new TeslaJSONThread[1];
+        teslaJSONThreads[0] = new TeslaJSONThread();
+        teslaJSONThreads[0].teslaJSONService = teslaJSONService;
+        threadsTesla[0] = new Thread(teslaJSONThreads[0]);
+        threadsTesla[0].start();*/
 
         Thread[] threadsHBSepet = new Thread[1];
         HepsiBuradaSepetJSONThread[] hepsiBuradaSepetJSONThreads = new HepsiBuradaSepetJSONThread[1];
