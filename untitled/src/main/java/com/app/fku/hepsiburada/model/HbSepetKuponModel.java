@@ -8,6 +8,7 @@ public class HbSepetKuponModel {
     private Long targetGroupId;
     private Long campaignId;
     private Boolean isApplied;
+    private Long discount;
 
     public Long getTargetGroupId() {
         return targetGroupId;
@@ -32,5 +33,13 @@ public class HbSepetKuponModel {
     @JsonProperty("isApplied")
     public void setApplied(Boolean applied) {
         isApplied = applied;
+    }
+
+    public Long getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Long discount) {
+        this.discount = discount;
     }
 }

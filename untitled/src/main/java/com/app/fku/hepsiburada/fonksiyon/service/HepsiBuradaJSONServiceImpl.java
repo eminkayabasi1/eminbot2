@@ -169,6 +169,10 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                             continue;
                         }
 
+                        if (hbSepetKuponModel.getDiscount() < 300) {
+                            continue;
+                        }
+
                         if (hbSepetKuponModel.getApplied()) {
                             //Kupon hazırda kullanılmış
                             for (HbSepetUrunModel hbSepetUrunModel : hbSepetGenel3Model.getBasketItems()) {

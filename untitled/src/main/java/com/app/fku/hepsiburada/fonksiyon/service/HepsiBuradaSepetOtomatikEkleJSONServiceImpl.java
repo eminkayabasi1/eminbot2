@@ -342,7 +342,7 @@ public class HepsiBuradaSepetOtomatikEkleJSONServiceImpl implements HepsiBuradaS
     public static void linkListDoldur() {
         //linkList.add("https://blackgate.hepsiburada.com/moriaapi/api/product?filter=satici:Hepsiburada%3Bmarkalar:philips&page=1&pageType=Brand&size=800&sortType=artanfiyat");//Philips
         linkList.add("https://www.hepsiburada.com/philips?filtreler=satici:Hepsiburada&siralama=artanfiyat&tab=allproducts");//Philips
-        linkList.add("https://www.hepsiburada.com/apple?filtreler=satici:Hepsiburada;MainCategory.Id:60005202,60003676,3008012,98&siralama=artanfiyat");//Apple
+        //linkList.add("https://www.hepsiburada.com/apple?filtreler=satici:Hepsiburada;MainCategory.Id:60005202,60003676,3008012,98&siralama=artanfiyat");//Apple
         linkList.add("https://www.hepsiburada.com/tefal?filtreler=satici:Hepsiburada&siralama=artanfiyat");//Tefal
         linkList.add("https://www.hepsiburada.com/grundig?filtreler=satici:Hepsiburada&siralama=artanfiyat");//Grundig
         linkList.add("https://www.hepsiburada.com/samsung?filtreler=satici:Hepsiburada;MainCategory.Id:60005201,3008012,80160030,159445,80160033&siralama=artanfiyat");//Samsung
