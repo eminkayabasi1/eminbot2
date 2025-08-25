@@ -51,7 +51,7 @@ public class TrendyolTYJSONServiceImpl implements TrendyolTYJSONService {
     @Override
     public void sorgula() throws IOException, InterruptedException {
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=392%2C794%2C325%2C326%2C651%2C105973%2C373%2C577%2C401%2C102900&mid=968&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.97d, "-4719689695"));//
-
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=101470&mid=968&lc=164462&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.99d, "-4719689695"));//
 
         for (; ; ) {
             try {
