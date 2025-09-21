@@ -5,6 +5,7 @@ import com.app.fku.genel.fonksiyon.service.LogService;
 import com.app.fku.genel.model.LinkModel;
 import com.app.fku.genel.utils.RandomString;
 import com.app.fku.hepsiburada.fonksiyon.impl.HbGenelService;
+import com.app.fku.karaca.fonksiyon.service.KaracaAlperJSONService;
 import com.app.fku.karaca.fonksiyon.service.KaracaJSONService;
 import com.app.fku.karaca.model.KaracaGenelModel;
 import com.app.fku.karaca.model.KaracaUrunModel;
@@ -23,7 +24,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
-public class KaracaJSONServiceImpl implements KaracaJSONService {
+public class KaracaAlperJSONServiceImpl implements KaracaAlperJSONService {
 
     @Autowired
     HbGenelService hbGenelService;
@@ -40,7 +41,7 @@ public class KaracaJSONServiceImpl implements KaracaJSONService {
     @Override
     public void sorgula() throws InterruptedException {
         //urlList.add(new LinkModel("https://www.karaca.com/marka/karaca-home?a%5B52%5D=Nevresim+Tak%C4%B1m%C4%B1&sort=p.price&q=&order=ASC&qb=&json=true", 1.00d, 4114700595L)); //Nevresim %0 Z Y
-        urlList.add(new LinkModel("https://www.karaca.com/kucuk-ev-aletleri?m[m]=1&sort=p.price&q=&order=ASC&json=true", 1.00d));
+        urlList.add(new LinkModel("https://www.karaca.com/magaza/karaca?p[p]=1000.0-140000&sort=p.price&q=&order=ASC&json=true", 1.00d));
         try {
             anaislem();
         } catch (Exception e) {
@@ -92,29 +93,10 @@ public class KaracaJSONServiceImpl implements KaracaJSONService {
                     }
                 }
             }
+
             for (KaracaUrunModel karacaUrunModel : topluUrunList) {
                 KaracaUrunModel eskiKaracaUrunModel = urunHashMap.get(karacaUrunModel.getProduct_id());
                 if (eskiKaracaUrunModel != null) {
-                    //Önceden var olan ürün, fiyat kontrol et
-                    if (karacaUrunModel.getFiyat() < eskiKaracaUrunModel.getFiyat() * eskiKaracaUrunModel.getIndirimOrani() && !ilkTur) {
-                        //İndirim
-                        String mesaj = "" +
-                                "İndirim\n" +
-                                "" + karacaUrunModel.getName() + "\n" +
-                                "Eski Fiyat: " + eskiKaracaUrunModel.getUnFormattedPrice() + "\n" +
-                                "Yeni Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "\n" +
-                                "Link:" + karacaUrunModel.getHref();
-                        telegramMesajGonder(mesaj, "-4840298770");
-                    } else if (karacaUrunModel.getFiyat() > eskiKaracaUrunModel.getFiyat() && !ilkTur) {
-                        //Zam
-                        String mesaj = "" +
-                                "Zam\n" +
-                                "" + karacaUrunModel.getName() + "\n" +
-                                "Eski Fiyat: " + eskiKaracaUrunModel.getUnFormattedPrice() + "\n" +
-                                "Yeni Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "\n" +
-                                "Link:" + karacaUrunModel.getHref();
-                        telegramMesajGonder(mesaj, "-4930197422");//ZAM
-                    }
                 } else {
                     if (!ilkTur) {
                         //Ürün yeni gelmiş direk mesaj at
@@ -123,11 +105,22 @@ public class KaracaJSONServiceImpl implements KaracaJSONService {
                                 "" + karacaUrunModel.getName() + "\n" +
                                 "Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "\n" +
                                 "Link:" + karacaUrunModel.getHref();
-                        telegramMesajGonder(mesaj, "-4840298770");
+                        telegramMesajGonder(mesaj, "-4881700942");
                     }
                 }
 
                 yeniUrunHashMap.put(karacaUrunModel.getProduct_id(), karacaUrunModel);
+                urunHashMap.remove(karacaUrunModel.getProduct_id());
+            }
+
+            for (KaracaUrunModel karacaUrunModel: new ArrayList<>(urunHashMap.values())) {
+                //Stok bitmiş ürünler
+                String mesaj = "" +
+                        "Stok Biten Ürün\n" +
+                        "" + karacaUrunModel.getName() + "\n" +
+                        "Fiyat: " + karacaUrunModel.getUnFormattedPrice() + "\n" +
+                        "Link:" + karacaUrunModel.getHref();
+                telegramMesajGonder(mesaj, "-4891232803");
             }
 
             ilkTur = false;
