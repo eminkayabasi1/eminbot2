@@ -95,6 +95,9 @@ public class TrendyolTYJSONServiceImpl implements TrendyolTYJSONService {
                         continue;
                     }*/
                     tyUrunModel.setIndirimOrani(linkModel.getIndirimOrani());
+                    if (tyUrunModel.getTyPlusPromotionPrice() != null && tyUrunModel.getTyPlusPromotionPrice().getTyPlusPrice() != null) {
+                        tyUrunModel.getPrice().setSellingPrice(tyUrunModel.getTyPlusPromotionPrice().getTyPlusPrice());
+                    }
                     if (tyUrunModel.getCollectableCouponDiscount() != null && tyUrunModel.getCollectableCouponDiscount() > 0) {
                         tyUrunModel.getPrice().setSellingPrice(tyUrunModel.getPrice().getSellingPrice() - tyUrunModel.getCollectableCouponDiscount());
                     }
@@ -125,6 +128,9 @@ public class TrendyolTYJSONServiceImpl implements TrendyolTYJSONService {
                             continue;
                         }*/
                         tyUrunModel.setIndirimOrani(linkModel.getIndirimOrani());
+                        if (tyUrunModel.getTyPlusPromotionPrice() != null && tyUrunModel.getTyPlusPromotionPrice().getTyPlusPrice() != null) {
+                            tyUrunModel.getPrice().setSellingPrice(tyUrunModel.getTyPlusPromotionPrice().getTyPlusPrice());
+                        }
                         if (tyUrunModel.getCollectableCouponDiscount() != null && tyUrunModel.getCollectableCouponDiscount() > 0) {
                             tyUrunModel.getPrice().setSellingPrice(tyUrunModel.getPrice().getSellingPrice() - tyUrunModel.getCollectableCouponDiscount());
                         }

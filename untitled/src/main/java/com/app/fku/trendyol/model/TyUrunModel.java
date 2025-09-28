@@ -11,6 +11,7 @@ public class TyUrunModel {
     private String categoryName;
     private String url;
     private TyFiyatModel price;
+    private TyPlusFiyatModel tyPlusPromotionPrice;
     private Double indirimOrani;
     private Long collectableCouponDiscount;
     private Boolean hasCollectableCoupon;
@@ -55,6 +56,14 @@ public class TyUrunModel {
 
     public void setPrice(TyFiyatModel price) {
         this.price = price;
+    }
+
+    public TyPlusFiyatModel getTyPlusPromotionPrice() {
+        return tyPlusPromotionPrice;
+    }
+
+    public void setTyPlusPromotionPrice(TyPlusFiyatModel tyPlusPromotionPrice) {
+        this.tyPlusPromotionPrice = tyPlusPromotionPrice;
     }
 
     public Double getIndirimOrani() {
