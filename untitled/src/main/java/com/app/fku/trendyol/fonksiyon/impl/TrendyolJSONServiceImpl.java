@@ -63,7 +63,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
         //urlList.add(new LinkModel("https://public.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=1104&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=1104&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=144430&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=104025&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=103498&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=108656%2C103665&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=103109&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=325%2C651%2C326%2C105973%2C653%2C103138&wc=1354&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
@@ -161,6 +161,11 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                 if (eskiTyUrunModel != null) {
                     //Önceden var olan ürün, fiyat kontrol et
                     if (tyUrunModel.getPrice().getSellingPrice() < eskiTyUrunModel.getPrice().getSellingPrice() * eskiTyUrunModel.getIndirimOrani() && !ilkTur) {
+                        Boolean tyPlusMu = false;
+                        if (tyUrunModel.getTyPlusPromotionPrice() != null && tyUrunModel.getTyPlusPromotionPrice().getTyPlusPrice() != null) {
+                            tyPlusMu = true;
+                        }
+
                         String mesaj = "" +
                                 "İndirim\n" +
                                 "" + tyUrunModel.getCategoryName() + "\n" +
@@ -168,6 +173,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                                 "Eski Fiyat: " + eskiTyUrunModel.getPrice().getSellingPrice() + "\n" +
                                 "Yeni Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
+                                "TY Plus Mu: " + tyPlusMu + "\n" +
                                 "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
 
                         if (tyUrunModel.getImageAlt().contains("Dyson") || tyUrunModel.getImageAlt().contains("DYSON") || tyUrunModel.getImageAlt().contains("dyson")) {
@@ -209,24 +215,37 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                     }
 
                     if (eskiUrunFlashMi == false && yeniUrunFlashMi == true) {
+                        Boolean tyPlusMu = false;
+                        if (tyUrunModel.getTyPlusPromotionPrice() != null && tyUrunModel.getTyPlusPromotionPrice().getTyPlusPrice() != null) {
+                            tyPlusMu = true;
+                        }
+
                         String mesaj = "" +
                                 "Flash Bildirim\n" +
                                 "" + tyUrunModel.getCategoryName() + "\n" +
                                 "" + tyUrunModel.getImageAlt() + "\n" +
                                 "Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
+                                "TY Plus Mu: " + tyPlusMu + "\n" +
                                 "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
                         telegramMesajGonder(mesaj, "-4662911491", tyUrunModel.getId());
                     }
                 } else {
                     if (!ilkTur) {
                         //Ürün yeni gelmiş direk mesaj at
+
+                        Boolean tyPlusMu = false;
+                        if (tyUrunModel.getTyPlusPromotionPrice() != null && tyUrunModel.getTyPlusPromotionPrice().getTyPlusPrice() != null) {
+                            tyPlusMu = true;
+                        }
+
                         String mesaj = "" +
                                 "Yeni Ürün\n" +
                                 "" + tyUrunModel.getCategoryName() + "\n" +
                                 "" + tyUrunModel.getImageAlt() + "\n" +
                                 "Fiyat Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
+                                "TY Plus Mu: " + tyPlusMu + "\n" +
                                 "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
 
                         if (tyUrunModel.getImageAlt().contains("Dyson") || tyUrunModel.getImageAlt().contains("DYSON") || tyUrunModel.getImageAlt().contains("dyson")) {
@@ -257,6 +276,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                                     "" + tyUrunModel.getImageAlt() + "\n" +
                                     "Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
                                     "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
+                                    "TY Plus Mu: " + tyPlusMu + "\n" +
                                     "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
                             telegramMesajGonder(mesaj, "-4662911491", tyUrunModel.getId());
                         }
