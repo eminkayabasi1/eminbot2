@@ -13,6 +13,7 @@ import com.app.fku.trendyol.model.TyUrunStampModel;
 import com.app.fku.trendyol.repository.TrendyolTelegramConfRepository;
 import com.app.fku.trendyol.repository.TyIstatistikRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.openqa.selenium.json.JsonException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +21,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
@@ -46,6 +44,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
 
     private final List<LinkModel> urlList = new ArrayList<>();
     private final HashMap<String, Date> mesajGonderimList = new HashMap<>();
+    private static Map<String, String> cookiesMap = new HashMap<>();
 
     @Override
     public void sorgula() throws IOException, InterruptedException {
@@ -302,22 +301,27 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
         for (;;) {
             RandomString gen = new RandomString(8, ThreadLocalRandom.current());
             //url = url + "&" + gen.nextString() + "=" + gen.nextString();
+
             String json = "";
             for (;;) {
-                json = Jsoup
+                Connection.Response response = Jsoup
                         .connect(url)
                         .userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
                         .referrer("http://www.google.com")
+                        .cookies(cookiesMap)
                         .timeout(12000)
                         .followRedirects(true)
                         .ignoreContentType(true)
                         .ignoreHttpErrors(true)
-                        .execute()
-                        .body();
+                        .execute();
 
-                if (json != null && !json.equals("")) {
+                if (response != null && response.statusCode() == 200 && response.body() != null && !response.body().equals("")) {
+                    json = response.body();
                     break;
                 }
+
+                cookiesMap = response.cookies();
+                System.out.println("Cookie setlendi");
             }
 
             ObjectMapper mapper = new ObjectMapper();
