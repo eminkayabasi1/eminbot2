@@ -223,7 +223,8 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
                                 "Flash Bildirim\n" +
                                 "" + tyUrunModel.getCategoryName() + "\n" +
                                 "" + tyUrunModel.getImageAlt() + "\n" +
-                                "Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
+                                "Eski Fiyat: " + eskiTyUrunModel.getPrice().getSellingPrice() + "\n" +
+                                "Yeni Fiyat: " + tyUrunModel.getPrice().getSellingPrice() + "\n" +
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
                                 "TY Plus Mu: " + tyPlusMu + "\n" +
                                 "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
