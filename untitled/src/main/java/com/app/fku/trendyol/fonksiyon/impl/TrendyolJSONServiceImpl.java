@@ -63,7 +63,7 @@ public class TrendyolJSONServiceImpl implements TrendyolJSONService {
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=1104&mb=kurumsal_satici&sst=PRICE_BY_ASC&prc=400-*", 0.95d));//
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=144430&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=103498&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=108656%2C103665&mb=kurumsal_satici&sst=PRICE_BY_ASC&prc=400-55000", 0.95d));//
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=108656%2C103665&mb=kurumsal_satici&sst=PRICE_BY_ASC&prc=400-45000", 0.95d));//
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wc=103109&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=325%2C651%2C326%2C105973%2C653%2C103138&wc=1354&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
         urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=103138%2C325%2C326&wc=104593&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.95d));//
