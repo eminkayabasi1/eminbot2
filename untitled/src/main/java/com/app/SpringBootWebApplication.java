@@ -140,6 +140,7 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
 
         //JSONLAR
 
+        /**
         Thread[] threadsHBSepet = new Thread[1];
         HepsiBuradaSepetJSONThread[] hepsiBuradaSepetJSONThreads = new HepsiBuradaSepetJSONThread[1];
         hepsiBuradaSepetJSONThreads[0] = new HepsiBuradaSepetJSONThread();
@@ -152,7 +153,7 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         hepsiBuradaSepetOtomatikEkleJSONThreads[0] = new HepsiBuradaSepetOtomatikEkleJSONThread();
         hepsiBuradaSepetOtomatikEkleJSONThreads[0].hepsiBuradaSepetOtomatikEkleJSONService = hepsiBuradaSepetOtomatikEkleJSONService;
         threadsHBSepetOE[0] = new Thread(hepsiBuradaSepetOtomatikEkleJSONThreads[0]);
-        threadsHBSepetOE[0].start();
+        threadsHBSepetOE[0].start();*/
 
         Thread[] threadsTY = new Thread[1];
         TrendyolJSONThread[] trendyolJSONThreads = new TrendyolJSONThread[1];
