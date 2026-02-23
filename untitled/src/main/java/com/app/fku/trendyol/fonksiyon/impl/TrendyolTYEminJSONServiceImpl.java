@@ -63,7 +63,7 @@ public class TrendyolTYEminJSONServiceImpl implements TrendyolTYEminJSONService 
          * 11- Kiwi
          * 12- LEGO
          */
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=108839%2C101849%2C348%2C392%2C104725%2C101470%2C325%2C467%2C103505%2C104764%2C633%2C109092%2C102323&mid=968&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.97d, "-4633543540"));//
+        //urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=108839%2C101849%2C348%2C392%2C104725%2C101470%2C325%2C467%2C103505%2C104764%2C633%2C109092%2C102323&mid=968&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.97d, "-4633543540"));//
 
 
         /**
@@ -78,9 +78,9 @@ public class TrendyolTYEminJSONServiceImpl implements TrendyolTYEminJSONService 
          * 9- Xiaomi
          * 10- Yui
          */
-        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=577%2C109251%2C143526%2C102900%2C794%2C101939%2C326%2C103138%2C102323%2C109108&mid=968&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.97d, "-4633543540"));//
+        //urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=577%2C109251%2C143526%2C102900%2C794%2C101939%2C326%2C103138%2C102323%2C109108&mid=968&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.97d, "-4633543540"));//
 
-
+        urlList.add(new LinkModel("https://apigw.trendyol.com/discovery-web-searchgw-service/v2/api/infinite-scroll/sr?wb=104725%2C325%2C326%2C577&mid=968&mb=kurumsal_satici&sst=PRICE_BY_ASC", 0.99d, "-4633543540"));//
 
 
         for (; ; ) {
@@ -183,7 +183,7 @@ public class TrendyolTYEminJSONServiceImpl implements TrendyolTYEminJSONService 
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
                                 "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
 
-                        telegramMesajGonder(mesaj, "-4633543540", tyUrunModel.getId());
+                        telegramMesajGonder(mesaj, "-5210592701", tyUrunModel.getId());
                     }
                 } else {
                     if (!ilkTur) {
@@ -196,7 +196,7 @@ public class TrendyolTYEminJSONServiceImpl implements TrendyolTYEminJSONService 
                                 "Kuponlu Mu: " + tyUrunModel.getHasCollectableCoupon() + "\n" +
                                 "Link:https://www.trendyol.com" + tyUrunModel.getUrl();
 
-                        telegramMesajGonder(mesaj, "-4633543540", tyUrunModel.getId());
+                        telegramMesajGonder(mesaj, "-5210592701", tyUrunModel.getId());
                     }
                 }
 

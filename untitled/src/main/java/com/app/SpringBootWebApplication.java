@@ -155,6 +155,7 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         threadsHBSepetOE[0] = new Thread(hepsiBuradaSepetOtomatikEkleJSONThreads[0]);
         threadsHBSepetOE[0].start();*/
 
+        /**
         Thread[] threadsTY = new Thread[1];
         TrendyolJSONThread[] trendyolJSONThreads = new TrendyolJSONThread[1];
         trendyolJSONThreads[0] = new TrendyolJSONThread();
@@ -167,7 +168,7 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         trendyolTYJSONThreads[0] = new TrendyolTYJSONThread();
         trendyolTYJSONThreads[0].trendyolTYJSONService = trendyolTYJSONService;
         threadsTYTY[0] = new Thread(trendyolTYJSONThreads[0]);
-        threadsTYTY[0].start();
+        threadsTYTY[0].start();*/
 
         Thread[] threadsTYEminTY = new Thread[1];
         TrendyolTYEminJSONThread[] trendyolTYEminJSONThreads = new TrendyolTYEminJSONThread[1];
@@ -176,6 +177,7 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         threadsTYEminTY[0] = new Thread(trendyolTYEminJSONThreads[0]);
         threadsTYEminTY[0].start();
 
+        /**
         Thread[] threadsAmazonx = new Thread[1];
         AmazonxThread[] amazonxThreads = new AmazonxThread[1];
         amazonxThreads[0] = new AmazonxThread();
@@ -195,7 +197,7 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         karacaAlperJSONThreads[0] = new KaracaAlperJSONThread();
         karacaAlperJSONThreads[0].karacaAlperJSONService = karacaAlperJSONService;
         threadsKaracaAlper[0] = new Thread(karacaAlperJSONThreads[0]);
-        threadsKaracaAlper[0].start();
+        threadsKaracaAlper[0].start();*/
 
         /**
          Thread[] threadsHB = new Thread[1];
