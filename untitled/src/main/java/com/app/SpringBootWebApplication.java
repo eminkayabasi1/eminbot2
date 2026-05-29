@@ -139,8 +139,6 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         //genelService.telegramMesajGonder(hostname, "-659185836", 10L);
 
         //JSONLAR
-
-        /**
         Thread[] threadsHBSepet = new Thread[1];
         HepsiBuradaSepetJSONThread[] hepsiBuradaSepetJSONThreads = new HepsiBuradaSepetJSONThread[1];
         hepsiBuradaSepetJSONThreads[0] = new HepsiBuradaSepetJSONThread();
@@ -153,7 +151,7 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         hepsiBuradaSepetOtomatikEkleJSONThreads[0] = new HepsiBuradaSepetOtomatikEkleJSONThread();
         hepsiBuradaSepetOtomatikEkleJSONThreads[0].hepsiBuradaSepetOtomatikEkleJSONService = hepsiBuradaSepetOtomatikEkleJSONService;
         threadsHBSepetOE[0] = new Thread(hepsiBuradaSepetOtomatikEkleJSONThreads[0]);
-        threadsHBSepetOE[0].start();*/
+        threadsHBSepetOE[0].start();
 
         /**
         Thread[] threadsTY = new Thread[1];
@@ -170,12 +168,13 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
         threadsTYTY[0] = new Thread(trendyolTYJSONThreads[0]);
         threadsTYTY[0].start();*/
 
+        /** aç bunu sonra
         Thread[] threadsTYEminTY = new Thread[1];
         TrendyolTYEminJSONThread[] trendyolTYEminJSONThreads = new TrendyolTYEminJSONThread[1];
         trendyolTYEminJSONThreads[0] = new TrendyolTYEminJSONThread();
         trendyolTYEminJSONThreads[0].trendyolTYEminJSONService = trendyolTYEminJSONService;
         threadsTYEminTY[0] = new Thread(trendyolTYEminJSONThreads[0]);
-        threadsTYEminTY[0].start();
+        threadsTYEminTY[0].start();*/
 
         /**
         Thread[] threadsAmazonx = new Thread[1];
