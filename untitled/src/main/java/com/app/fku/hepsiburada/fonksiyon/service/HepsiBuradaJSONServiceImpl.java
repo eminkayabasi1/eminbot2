@@ -85,8 +85,8 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzcyODUsImV4cCI6MTc4MDMzNjc4NSwiaWF0IjoxNzgwMDc3Mjg1LCJVc2VySWQiOiJhMzM0YzFlZC0yOTMzLTRlMWItYWVhZC01NmU3MTc0MzI4NzYiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE2QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjZmNDhhYmMxLTA1YzAtNDhkNS04NjRlLWEzNmUxMTdlNDZkNSIsInAiOnsidCI6W10sImUiOiI5a1JwNTY4c25hU0pIUWJmYk9UR25ZTGlPNUJ6a3I2a0t3QzQ3dGptUStRPSJ9fQ.oEghq-yB_jCsBDgT_N5CUiXPh3Jq9uIFdMwBogctn4U",
                 new HbTokenModel("47b14cfb-2cad-471a-85de-ebe4684ee95f", "cc7c5241-6017-44b2-9528-93c8d8907efb", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzcyODUsImV4cCI6MTc4MDMzNjc4NSwiaWF0IjoxNzgwMDc3Mjg1LCJVc2VySWQiOiJhMzM0YzFlZC0yOTMzLTRlMWItYWVhZC01NmU3MTc0MzI4NzYiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE2QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjZmNDhhYmMxLTA1YzAtNDhkNS04NjRlLWEzNmUxMTdlNDZkNSIsInAiOnsidCI6W10sImUiOiI5a1JwNTY4c25hU0pIUWJmYk9UR25ZTGlPNUJ6a3I2a0t3QzQ3dGptUStRPSJ9fQ.oEghq-yB_jCsBDgT_N5CUiXPh3Jq9uIFdMwBogctn4U"));//emin.16@atlasposta.com - Aa123456
         hbTokenHashMap.put(
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzczMzcsImV4cCI6MTc4MDMzNjgzNywiaWF0IjoxNzgwMDc3MzM3LCJVc2VySWQiOiJjODlmMWZlNy05MzIxLTRlNjItYmEwNy03NTk4NDRjOWE0M2EiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE3QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjNjMTE1ZGM0LWZkNTAtNGE1Yy1iMDIzLTE4NjNmMmEzOTM5NyIsInAiOnsidCI6W10sImUiOiJrOHpQYVlIZzRnQlJKeDhBcnRDZVRTUk9wZDlpK2VYVlduQUw3cE1FL0xrPSJ9fQ.RKwcET2qmMLb0CGHsJ3XOi4RrkmytufXYmllclRYxho",
-                new HbTokenModel("47b14cfb-2cad-471a-85de-ebe4684ee95f", "cc7c5241-6017-44b2-9528-93c8d8907efb", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzczMzcsImV4cCI6MTc4MDMzNjgzNywiaWF0IjoxNzgwMDc3MzM3LCJVc2VySWQiOiJjODlmMWZlNy05MzIxLTRlNjItYmEwNy03NTk4NDRjOWE0M2EiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE3QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjNjMTE1ZGM0LWZkNTAtNGE1Yy1iMDIzLTE4NjNmMmEzOTM5NyIsInAiOnsidCI6W10sImUiOiJrOHpQYVlIZzRnQlJKeDhBcnRDZVRTUk9wZDlpK2VYVlduQUw3cE1FL0xrPSJ9fQ.RKwcET2qmMLb0CGHsJ3XOi4RrkmytufXYmllclRYxho"));//emin.17@atlasposta.com - Aa123456
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODIyMjIwNzAsImV4cCI6MTc4MjQ4MTU3MCwiaWF0IjoxNzgyMjIyMDcwLCJVc2VySWQiOiJjODlmMWZlNy05MzIxLTRlNjItYmEwNy03NTk4NDRjOWE0M2EiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE3QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6Ijc1Yjk0ZTE0LWQyNmYtNDg2My1iODY0LTNhYTA5N2NmNjFiYiIsInAiOnsidCI6W10sImUiOiJrOHpQYVlIZzRnQlJKeDhBcnRDZVRTUk9wZDlpK2VYVlduQUw3cE1FL0xrPSJ9fQ.8mS7DjBLRnCcr2didLUI9XMEZbwKulnmaJ2TQgdW_7I",
+                new HbTokenModel("47b14cfb-2cad-471a-85de-ebe4684ee95f", "cc7c5241-6017-44b2-9528-93c8d8907efb", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODIyMjIwNzAsImV4cCI6MTc4MjQ4MTU3MCwiaWF0IjoxNzgyMjIyMDcwLCJVc2VySWQiOiJjODlmMWZlNy05MzIxLTRlNjItYmEwNy03NTk4NDRjOWE0M2EiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE3QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6Ijc1Yjk0ZTE0LWQyNmYtNDg2My1iODY0LTNhYTA5N2NmNjFiYiIsInAiOnsidCI6W10sImUiOiJrOHpQYVlIZzRnQlJKeDhBcnRDZVRTUk9wZDlpK2VYVlduQUw3cE1FL0xrPSJ9fQ.8mS7DjBLRnCcr2didLUI9XMEZbwKulnmaJ2TQgdW_7I"));//emin.17@atlasposta.com - Aa123456
         hbTokenHashMap.put(
                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzczOTEsImV4cCI6MTc4MDMzNjg5MSwiaWF0IjoxNzgwMDc3MzkxLCJVc2VySWQiOiI5YzY0Yjk3Ny03NDEzLTRjOGQtOGFiOC0zYjUxOWZlMWM3YTciLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE4QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjI4MGJlYjM2LTQzMWYtNDc2ZC1iZGY2LTdjZTdiNmI2Yjk4ZiIsInAiOnsidCI6W10sImUiOiJXaFRFZFRnMzE2VWFYeTlBL2U0VDVvanlTQUZSbCthQW9DYkVxc1VxVmswPSJ9fQ._3ZpmFY7W9iiwnxO2GhYq6jN_mQBn_LOpWf6LMWp3tU",
                 new HbTokenModel("47b14cfb-2cad-471a-85de-ebe4684ee95f", "cc7c5241-6017-44b2-9528-93c8d8907efb", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzczOTEsImV4cCI6MTc4MDMzNjg5MSwiaWF0IjoxNzgwMDc3MzkxLCJVc2VySWQiOiI5YzY0Yjk3Ny03NDEzLTRjOGQtOGFiOC0zYjUxOWZlMWM3YTciLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE4QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjI4MGJlYjM2LTQzMWYtNDc2ZC1iZGY2LTdjZTdiNmI2Yjk4ZiIsInAiOnsidCI6W10sImUiOiJXaFRFZFRnMzE2VWFYeTlBL2U0VDVvanlTQUZSbCthQW9DYkVxc1VxVmswPSJ9fQ._3ZpmFY7W9iiwnxO2GhYq6jN_mQBn_LOpWf6LMWp3tU"));//emin.18@atlasposta.com - Aa123456
@@ -141,6 +141,10 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
             for (HbTokenModel hbTokenModel : hbTokenHashMap.values()) {
                 int urunSayisi = 0;
                 HbSepetGenel3Model hbSepetGenel3Model = readJsonFromUrl(hbTokenModel);
+                if (hbSepetGenel3Model == null) {
+                    continue;
+                }
+
                 List<HbSepetKuponModel> kullanilabilirKuponList = new ArrayList<>();
                 if (hbSepetGenel3Model.getEligibleCouponList() != null && hbSepetGenel3Model.getEligibleCouponList().size() > 0) {
                     for (HbSepetKuponModel hbSepetKuponModel : hbSepetGenel3Model.getEligibleCouponList()) {
@@ -181,15 +185,17 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                             //Kupon kullanılmamış
                             kuponKullan(hbTokenModel, new HbSepetKuponKullanModel(hbSepetKuponModel.getCampaignId(), hbSepetKuponModel.getTargetGroupId()));
                             HbSepetGenel3Model hbSepetGenel3ModelForKupon = readJsonFromUrl(hbTokenModel);
-                            for (HbSepetUrunModel hbSepetUrunModel : hbSepetGenel3ModelForKupon.getBasketItems()) {
-                                if (hbSepetUrunModel.getPrice() == null || hbSepetUrunModel.getPrice().getAmount() == null || hbSepetUrunModel.getPrice().getAmount() == 0) {
-                                    continue;
-                                }
-                                HbSepetUrunModel tmpHbSepetUrunModel = kuponluHashMap.get(hbSepetUrunModel.getProduct().getSku());
-                                if (tmpHbSepetUrunModel == null) {
-                                    kuponluHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
-                                } else if (hbSepetUrunModel.getPrice().getAmount() < tmpHbSepetUrunModel.getPrice().getAmount()) {
-                                    kuponluHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
+                            if (hbSepetGenel3ModelForKupon != null) {
+                                for (HbSepetUrunModel hbSepetUrunModel : hbSepetGenel3ModelForKupon.getBasketItems()) {
+                                    if (hbSepetUrunModel.getPrice() == null || hbSepetUrunModel.getPrice().getAmount() == null || hbSepetUrunModel.getPrice().getAmount() == 0) {
+                                        continue;
+                                    }
+                                    HbSepetUrunModel tmpHbSepetUrunModel = kuponluHashMap.get(hbSepetUrunModel.getProduct().getSku());
+                                    if (tmpHbSepetUrunModel == null) {
+                                        kuponluHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
+                                    } else if (hbSepetUrunModel.getPrice().getAmount() < tmpHbSepetUrunModel.getPrice().getAmount()) {
+                                        kuponluHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
+                                    }
                                 }
                             }
                         }
@@ -232,12 +238,16 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                                 "Yeni Fiyat: " + hbSepetUrunModel.getPrice().getAmount() + "\n" +
                                 "Link:" + hbSepetUrunModel.getProduct().getUrl();
 
-                        if (hbSepetUrunModel.getPrice().getAmount() <= eskiHbUrunModel.getPrice().getAmount() * 0.90d && hbSepetUrunModel.getPrice().getAmount() >= eskiHbUrunModel.getPrice().getAmount() * 0.80d) {
-                            telegramMesajGonder(mesaj, "-5182653869");//10-20
-                        } else if (hbSepetUrunModel.getPrice().getAmount() < eskiHbUrunModel.getPrice().getAmount() * 0.80d) {
-                            telegramMesajGonder(mesaj, "-5215611526");//20 ve üstü
+                        if (hbSepetUrunModel.getProduct().getName().contains("LEGO") || hbSepetUrunModel.getProduct().getName().contains("Lego")) {
+                            telegramMesajGonder(mesaj, "-4973777996");
                         } else {
-                            telegramMesajGonder(mesaj, "-5247222366");//0-10 buraya
+                            if (hbSepetUrunModel.getPrice().getAmount() <= eskiHbUrunModel.getPrice().getAmount() * 0.90d && hbSepetUrunModel.getPrice().getAmount() >= eskiHbUrunModel.getPrice().getAmount() * 0.80d) {
+                                telegramMesajGonder(mesaj, "-5182653869");//10-20
+                            } else if (hbSepetUrunModel.getPrice().getAmount() < eskiHbUrunModel.getPrice().getAmount() * 0.80d) {
+                                telegramMesajGonder(mesaj, "-5215611526");//20 ve üstü
+                            } else {
+                                telegramMesajGonder(mesaj, "-5247222366");//0-10 buraya
+                            }
                         }
                     }
                 } else {
@@ -249,7 +259,11 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                                 "Fiyat Fiyat: " + hbSepetUrunModel.getPrice().getAmount() + "\n" +
                                 "Link:" + hbSepetUrunModel.getProduct().getUrl();
 
-                        telegramMesajGonder(mesaj, "-5117192231");
+                        if (hbSepetUrunModel.getProduct().getName().contains("LEGO") || hbSepetUrunModel.getProduct().getName().contains("Lego")) {
+                            telegramMesajGonder(mesaj, "-4973777996");
+                        } else {
+                            telegramMesajGonder(mesaj, "-5117192231");
+                        }
                     }
                 }
 
@@ -285,6 +299,10 @@ public class HepsiBuradaJSONServiceImpl implements HepsiBuradaSepetJSONService {
                                 .followRedirects(true)
                                 .headers(headerMap)
                                 .ignoreContentType(true).execute().body();
+
+                if (json == null || json.equals("")) {
+                    return null;
+                }
                 ObjectMapper mapper = new ObjectMapper();
                 HbSepetGenel1Model hbSepetGenel1Model = mapper.readValue(json, HbSepetGenel1Model.class);
                 return hbSepetGenel1Model.getResult().getBasket();

@@ -86,8 +86,8 @@ public class HepsiBuradaSepetOtomatikEkleJSONServiceImpl implements HepsiBuradaS
                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzcyODUsImV4cCI6MTc4MDMzNjc4NSwiaWF0IjoxNzgwMDc3Mjg1LCJVc2VySWQiOiJhMzM0YzFlZC0yOTMzLTRlMWItYWVhZC01NmU3MTc0MzI4NzYiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE2QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjZmNDhhYmMxLTA1YzAtNDhkNS04NjRlLWEzNmUxMTdlNDZkNSIsInAiOnsidCI6W10sImUiOiI5a1JwNTY4c25hU0pIUWJmYk9UR25ZTGlPNUJ6a3I2a0t3QzQ3dGptUStRPSJ9fQ.oEghq-yB_jCsBDgT_N5CUiXPh3Jq9uIFdMwBogctn4U",
                 new HbTokenModel("47b14cfb-2cad-471a-85de-ebe4684ee95f", "cc7c5241-6017-44b2-9528-93c8d8907efb", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzcyODUsImV4cCI6MTc4MDMzNjc4NSwiaWF0IjoxNzgwMDc3Mjg1LCJVc2VySWQiOiJhMzM0YzFlZC0yOTMzLTRlMWItYWVhZC01NmU3MTc0MzI4NzYiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE2QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjZmNDhhYmMxLTA1YzAtNDhkNS04NjRlLWEzNmUxMTdlNDZkNSIsInAiOnsidCI6W10sImUiOiI5a1JwNTY4c25hU0pIUWJmYk9UR25ZTGlPNUJ6a3I2a0t3QzQ3dGptUStRPSJ9fQ.oEghq-yB_jCsBDgT_N5CUiXPh3Jq9uIFdMwBogctn4U"));//emin.16@atlasposta.com - Aa123456
         hbTokenHashMap.put(
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzczMzcsImV4cCI6MTc4MDMzNjgzNywiaWF0IjoxNzgwMDc3MzM3LCJVc2VySWQiOiJjODlmMWZlNy05MzIxLTRlNjItYmEwNy03NTk4NDRjOWE0M2EiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE3QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjNjMTE1ZGM0LWZkNTAtNGE1Yy1iMDIzLTE4NjNmMmEzOTM5NyIsInAiOnsidCI6W10sImUiOiJrOHpQYVlIZzRnQlJKeDhBcnRDZVRTUk9wZDlpK2VYVlduQUw3cE1FL0xrPSJ9fQ.RKwcET2qmMLb0CGHsJ3XOi4RrkmytufXYmllclRYxho",
-                new HbTokenModel("47b14cfb-2cad-471a-85de-ebe4684ee95f", "cc7c5241-6017-44b2-9528-93c8d8907efb", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzczMzcsImV4cCI6MTc4MDMzNjgzNywiaWF0IjoxNzgwMDc3MzM3LCJVc2VySWQiOiJjODlmMWZlNy05MzIxLTRlNjItYmEwNy03NTk4NDRjOWE0M2EiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE3QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjNjMTE1ZGM0LWZkNTAtNGE1Yy1iMDIzLTE4NjNmMmEzOTM5NyIsInAiOnsidCI6W10sImUiOiJrOHpQYVlIZzRnQlJKeDhBcnRDZVRTUk9wZDlpK2VYVlduQUw3cE1FL0xrPSJ9fQ.RKwcET2qmMLb0CGHsJ3XOi4RrkmytufXYmllclRYxho"));//emin.17@atlasposta.com - Aa123456
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODIyMjIwNzAsImV4cCI6MTc4MjQ4MTU3MCwiaWF0IjoxNzgyMjIyMDcwLCJVc2VySWQiOiJjODlmMWZlNy05MzIxLTRlNjItYmEwNy03NTk4NDRjOWE0M2EiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE3QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6Ijc1Yjk0ZTE0LWQyNmYtNDg2My1iODY0LTNhYTA5N2NmNjFiYiIsInAiOnsidCI6W10sImUiOiJrOHpQYVlIZzRnQlJKeDhBcnRDZVRTUk9wZDlpK2VYVlduQUw3cE1FL0xrPSJ9fQ.8mS7DjBLRnCcr2didLUI9XMEZbwKulnmaJ2TQgdW_7I",
+                new HbTokenModel("47b14cfb-2cad-471a-85de-ebe4684ee95f", "cc7c5241-6017-44b2-9528-93c8d8907efb", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODIyMjIwNzAsImV4cCI6MTc4MjQ4MTU3MCwiaWF0IjoxNzgyMjIyMDcwLCJVc2VySWQiOiJjODlmMWZlNy05MzIxLTRlNjItYmEwNy03NTk4NDRjOWE0M2EiLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE3QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6Ijc1Yjk0ZTE0LWQyNmYtNDg2My1iODY0LTNhYTA5N2NmNjFiYiIsInAiOnsidCI6W10sImUiOiJrOHpQYVlIZzRnQlJKeDhBcnRDZVRTUk9wZDlpK2VYVlduQUw3cE1FL0xrPSJ9fQ.8mS7DjBLRnCcr2didLUI9XMEZbwKulnmaJ2TQgdW_7I"));//emin.17@atlasposta.com - Aa123456
         hbTokenHashMap.put(
                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzczOTEsImV4cCI6MTc4MDMzNjg5MSwiaWF0IjoxNzgwMDc3MzkxLCJVc2VySWQiOiI5YzY0Yjk3Ny03NDEzLTRjOGQtOGFiOC0zYjUxOWZlMWM3YTciLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE4QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjI4MGJlYjM2LTQzMWYtNDc2ZC1iZGY2LTdjZTdiNmI2Yjk4ZiIsInAiOnsidCI6W10sImUiOiJXaFRFZFRnMzE2VWFYeTlBL2U0VDVvanlTQUZSbCthQW9DYkVxc1VxVmswPSJ9fQ._3ZpmFY7W9iiwnxO2GhYq6jN_mQBn_LOpWf6LMWp3tU",
                 new HbTokenModel("47b14cfb-2cad-471a-85de-ebe4684ee95f", "cc7c5241-6017-44b2-9528-93c8d8907efb", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODAwNzczOTEsImV4cCI6MTc4MDMzNjg5MSwiaWF0IjoxNzgwMDc3MzkxLCJVc2VySWQiOiI5YzY0Yjk3Ny03NDEzLTRjOGQtOGFiOC0zYjUxOWZlMWM3YTciLCJUaXRsZSI6IkVtaW4gQ2FuIiwiRmlyc3ROYW1lIjoiRW1pbiIsIkxhc3ROYW1lIjoiQ2FuIiwiRW1haWwiOiJlbWluLjE4QGF0bGFzcG9zdGEuY29tIiwiSXNBdXRoZW50aWNhdGVkIjoiVHJ1ZSIsIkFwcEtleSI6IkFGN0YyQTM3LUNDNEItNEYxQy04N0ZELUZGMzY0MkY2N0VDQiIsIlByb3ZpZGVyIjoiSGVwc2lidXJhZGEiLCJTaGFyZURhdGFQZXJtaXNzaW9uIjoiVHJ1ZSIsIlRlbmFudCI6IlNQQSIsIkp0aSI6IjI4MGJlYjM2LTQzMWYtNDc2ZC1iZGY2LTdjZTdiNmI2Yjk4ZiIsInAiOnsidCI6W10sImUiOiJXaFRFZFRnMzE2VWFYeTlBL2U0VDVvanlTQUZSbCthQW9DYkVxc1VxVmswPSJ9fQ._3ZpmFY7W9iiwnxO2GhYq6jN_mQBn_LOpWf6LMWp3tU"));//emin.18@atlasposta.com - Aa123456
@@ -142,17 +142,23 @@ public class HepsiBuradaSepetOtomatikEkleJSONServiceImpl implements HepsiBuradaS
             for (HbTokenModel hbTokenModel: hbTokenHashMap.values()) {
                 int urunSayisi = 0;
                 HbSepetGenel3Model hbSepetGenel3Model = readJsonFromUrl(hbTokenModel);
-                List<HbSepetUrunModel> hbSepetUrunModelList = hbSepetGenel3Model.getBasketItems();
-                for (HbSepetUrunModel hbSepetUrunModel : hbSepetUrunModelList) {
-                    if (hbSepetUrunModel.getPrice() == null || hbSepetUrunModel.getPrice().getAmount() == null || hbSepetUrunModel.getPrice().getAmount() == 0) {
-                        continue;
+                if (hbSepetGenel3Model != null) {
+                    List<HbSepetUrunModel> hbSepetUrunModelList = hbSepetGenel3Model.getBasketItems();
+                    for (HbSepetUrunModel hbSepetUrunModel : hbSepetUrunModelList) {
+                        if (hbSepetUrunModel.getPrice() == null || hbSepetUrunModel.getPrice().getAmount() == null || hbSepetUrunModel.getPrice().getAmount() == 0) {
+                            continue;
+                        }
+                        urunSayisi++;
+                        topluUrunList.add(hbSepetUrunModel);
+                        yeniUrunHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
                     }
-                    urunSayisi++;
-                    topluUrunList.add(hbSepetUrunModel);
-                    yeniUrunHashMap.put(hbSepetUrunModel.getProduct().getSku(), hbSepetUrunModel);
+                    hbTokenModel.setUrunSayisi(urunSayisi);
+                    hbTokenModel.setUrunToplam(hbSepetGenel3Model.getTotalPrice().getAmount());
+                } else {
+                    hbTokenModel.setUrunSayisi(0);
+                    hbTokenModel.setUrunToplam(0);
                 }
-                hbTokenModel.setUrunSayisi(urunSayisi);
-                hbTokenModel.setUrunToplam(hbSepetGenel3Model.getTotalPrice().getAmount());
+
                 hbTokenHashMap.put(hbTokenModel.getBearerTokent(), hbTokenModel);
             }
 
@@ -293,6 +299,9 @@ public class HepsiBuradaSepetOtomatikEkleJSONServiceImpl implements HepsiBuradaS
                                 //.userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
                                 .headers(headerMap)
                                 .ignoreContentType(true).execute().body();
+                if (json == null || json.equals("")) {
+                    return null;
+                }
                 ObjectMapper mapper = new ObjectMapper();
                 HbSepetGenel1Model hbSepetGenel1Model = mapper.readValue(json, HbSepetGenel1Model.class);
                 return hbSepetGenel1Model.getResult().getBasket();
