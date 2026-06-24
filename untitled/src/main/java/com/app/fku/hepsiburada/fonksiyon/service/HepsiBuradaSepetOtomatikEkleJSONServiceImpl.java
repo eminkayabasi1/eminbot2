@@ -359,9 +359,11 @@ public class HepsiBuradaSepetOtomatikEkleJSONServiceImpl implements HepsiBuradaS
     public static void linkListDoldur() {
         linkList.add("https://www.hepsiburada.com/philips?filtreler=satici:Hepsiburada;fiyat:1000-max&siralama=artanfiyat&tab=allproducts");//Philips
         linkList.add("https://www.hepsiburada.com/tefal?filtreler=satici:Hepsiburada&siralama=artanfiyat");//Tefal
-        linkList.add("https://www.hepsiburada.com/grundig?filtreler=satici:Hepsiburada&siralama=artanfiyat");//Grundig
-        linkList.add("https://www.hepsiburada.com/samsung?filtreler=satici:Hepsiburada;MainCategory.Id:60005201,3008012,80160030,159445,80160033&siralama=artanfiyat");//Samsung
+        linkList.add("https://www.hepsiburada.com/grundig?filtreler=satici:Hepsiburada&siralama=artanfiyat&kategori=2147483638_17071");//Grundig
+        linkList.add("https://www.hepsiburada.com/samsung?filtreler=satici:Hepsiburada;MainCategory.Id:80160030,159445,80160033&siralama=artanfiyat");//Samsung
         linkList.add("https://www.hepsiburada.com/karaca?filtreler=satici:Hepsiburada&siralama=artanfiyat");//Karaca
         linkList.add("https://www.hepsiburada.com/lego?filtreler=satici:Hepsiburada&siralama=artanfiyat");//Lego
+        linkList.add("https://www.hepsiburada.com/roborock?filtreler=satici:Hepsiburada&siralama=artanfiyat");//Roborock
+        linkList.add("https://www.hepsiburada.com/dyson?filtreler=satici:Hepsiburada&siralama=artanfiyat");//Dyson
     }
 }
